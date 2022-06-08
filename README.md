@@ -9,13 +9,13 @@
  Semantic Law case Search can provide users with more substantial and diverse information regardless of whether they are lawyers or not. Moreover, we have demonstrated the practicality of the model by conducting beta testing both with lawyers and with ordinary students without legal domain knowledge.
 
 
- ## 1.Overall Pipeline
+ ## 1. Overall Pipeline
  The process of Semantic Law case Search is divided into four steps. In the first step, each document in the legal database is converted into the form of embeddings using a pre-trained language model. In the next step, these embeddings are parallelly clustered and representations of topics and keywords are extracted from clusters using a class-based TF-IDF formula. In the third step, the relevance between the query vector and legal document embeddings is measured by Euclidean distance or Dot-product. Lastly, to provide users with optimal search results, relevant law cases are re-ranked through post-filtering.
 
 ![overall_pipeline](https://user-images.githubusercontent.com/105137667/172510181-53605f35-9d36-43c5-b7b3-de1a3cfbfea6.jpg)
 
 
-## 2.Legal Document Embeddings
+## 2. Legal Document Embeddings
  Any other embedding techniques can be used for this step if the language model generating the document embedding is fine-tuned on semantic similarity. In this study, we created pre-trained KoLawBERT models applying various BERT-based models’ language masking techniques such as original BERT static masking (2018),  Roberta dynamic masking (2019), and ALBERT masking (2019) with cross-layer parameter sharing and factorized embedding parameterization. After this, we converted KoLawBERT into sentence-BERT by adding a pooling layer and fine-tuning on both Korean Natural Language Inference (KorNLI) and Korean Semantic Textual Similarity (KorSTS) datasets for making semantically meaningful embeddings.
 ![Doc_embeddings](https://user-images.githubusercontent.com/105137667/172509527-cd1625fa-20bb-4af8-ae74-373f791c17ae.jpg)
 
