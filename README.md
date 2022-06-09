@@ -42,7 +42,7 @@ Experimental results demonstrate that our parallel clustering is faster and more
 ![parallel_clustering_speed](https://user-images.githubusercontent.com/105137667/172763944-19bf4646-861b-432c-8e71-84dc95bf80a5.jpg)
 
 
-## 6. Dynamic Post-Filtering
+## 4. Dynamic Post-Filtering
  Post-filtering is meant for re-ranking the search results in response to the user’s request after measuring embeddings relevance. Dynamic post-filtering is the system that converts original law cases searched into optimal results through the following three different post-filtering techniques: Popularity-based filtering, User-based filtering, and Online-based filtering. They dynamically filter the law cases based on the precedent views, user, and search volume.
  
 
