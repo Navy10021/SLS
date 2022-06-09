@@ -8,6 +8,8 @@
 
  Semantic Law case Search can provide users with more substantial and diverse information regardless of whether they are lawyers or not. Moreover, we have verified experimentally the practicality of the model by testing for both lawyers and ordinary students without legal domain knowledge.
 
+ Furthermore, the Semantic law case search framework is not limited to the Korean language and the field of Law. This framework we designed can apply multilingual datasets and can be extended to the various areas of specialization such as medical and financial because it is vector-based architecture consisting of cluster-based topic modeling and semantic document search. By separating the process of parallel clustering, generating topic representation,  semantic search, and post-filtering significant flexibility is introduced in the model allowing for ease of usability.
+ 
 
  ## 1. Overall Pipeline
  The process of Semantic Law case Search is divided into four steps. In the first step, each document in the legal database is converted into the form of embeddings using a pre-trained language model. In the next step, these embeddings are parallelly clustered and representations of topics and keywords are extracted from clusters using a class-based TF-IDF formula. In the third step, the relevance between the query vector and legal document embeddings is measured by Euclidean distance or Dot-product. Lastly, to provide users with optimal search results, relevant law cases are re-ranked through post-filtering.
