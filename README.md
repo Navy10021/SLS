@@ -1,4 +1,4 @@
-# Legal Searcher: Dynamic semantic law case search procedure
+# Semantic Legal Searcher: Dynamic semantic law case search procedure
 
  We propose Legal Searcher which is a new conceptual law case search procedure. Our main contributions are as follows:
 
