@@ -1,20 +1,20 @@
-# Semantic Legal Searcher: Dynamic semantic law case search procedure
+# Semantic Legal Searcher: Faster Natural Language-based Semantic Search for Case Law
 
- We propose Semantic Legal Searcher which is a new conceptual law case search procedure. Our main contributions are as follows:
+ We propose Semantic Legal Searcher which is a new conceptual case law search procedure. Our main contributions are as follows:
  
-1. We introduce a Clean Korean Legal Corpus (CKLC). This corpus consists of 52.9 million words of a pre-processed Korean legal text published from the year of 1954 to the present year and they were pre-processed.
-2. We create KoLawBERT, pre-trained language models trained on the Clean  Korean Legal Corpus by applying various masked language modeling (MLM) methods. Training with MLM allows language models to better understand the language in a more specific domain. KoLawBERT was shaped with three popular masking techniques: BERT static masking, Roberta dynamic masking, and ALBERT parameter-sharing.
-3. We design the Semantic Legal Searcher framework by combining semantic document search with cluster-based topic modeling. Topic modeling is an unsupervised method to extract semantic themes within documents. Our model finds semantically similar precedents by matching the similarity between document embeddings and query embeddings, and at the same time extracts representative keywords and topics of each precedent through topic modeling.
-4. We provide enhanced search results through Dynamic post-filtering. When a user searches for relevant law cases, the system dynamically re-ranking the search results based on the search popularity, user, and search volumes.
+ 1.	We introduce a Clean Korean Legal Corpus (CKLC). This corpus consists of 52.9 million words of a pre-processed Korean legal text published from the year of 1954 to the present year and they were pre-processed.
+ 2.	We create KoLawBERT, pre-trained language models trained on the Clean  Korean Legal Corpus by applying various masked language modeling (MLM) methods. Training with MLM allows language models to better understand the language in a more specific domain. KoLawBERT was shaped with three popular masking techniques: BERT static masking, Roberta dynamic masking, and ALBERT parameter-sharing.
+ 3.	We design the Semantic Legal Searcher framework by combining semantic document search with cluster-based topic modeling. Topic modeling is a method to extract topics within documents. Our model finds semantically similar precedents by matching the similarity between document embeddings and query embeddings, and at the same time extracts representative keywords and topics of each precedent through topic modeling.
+ 4.	We provide enhanced search results through Dynamic post-filtering. When a user searches for relevant case law, the system dynamically re-ranking the search results based on the search popularity, user, and search volumes.
 
  Semantic Legal Searcher can provide users with more substantial and diverse information regardless of whether they are lawyers or not. Moreover, we have verified experimentally the practicality of the model by testing for both lawyers and ordinary students without legal domain knowledge.
 
- Furthermore, the Legal Searcher framework is not limited to the Korean language and the fields of Law. This framework we designed can be applied to multilingual datasets and extended to the various areas of specialization such as medical and financial sectors because it is a vector-based architecture consisting of cluster-based topic modeling and semantic document search. By separating the process of parallel clustering, generating topic representation,  semantic search, and dynamic post-filtering, flexibility can be given in the model allowing for ease of usability.
+ Furthermore, the Semantic Legal Searcher framework is not limited to the Korean language and the fields of Law. This framework we designed can be applied to multilingual datasets and extended to the various areas of specialization such as medical and financial sectors because it is a vector-based architecture consisting of cluster-based topic modeling and semantic document search. By separating the process of parallel clustering, generating topic representations, semantic search, and dynamic post-filtering, flexibility can be given in the model allowing for ease of usability.
  
 
  ## 1. Overall Pipeline
  
- The basic process of the Semantic Legal Searcher is divided into four steps as shown in Figure 1.  In the first step, each document in the legal database is converted into the form of embeddings using PLM. In the next step, these embeddings are parallelly clustered and representations of topics and keywords are extracted from clusters using a class-based TF-IDF formula. In the third step, the relevance between the query vector and legal document embeddings is measured by Euclidean distance or Dot-product. Lastly, to provide users with optimal search results, relevant law cases are re-ranked through dynamic post-filtering.
+ The basic process of the Semantic Legal Searcher is divided into four steps as shown in Figure 1.  In the first step, each document in the legal database is converted into the form of embeddings using PLM. In the next step, these embeddings are parallelly clustered and representations of topics and keywords are extracted from clusters using a class-based TF-IDF formula. In the third step, the relevance between the query vector and legal document embeddings is measured by Euclidean-distance or Dot-product. Lastly, to provide users with optimal search results, relevant precedents are re-ranked through dynamic post-filtering.
 
 
 ![image](https://user-images.githubusercontent.com/105137667/172834568-33ba016c-0618-4c2b-8c8c-1d373596def4.png)
@@ -43,7 +43,7 @@ Experimental results demonstrate that our parallel clustering is faster and more
 
 
 ## 4. Dynamic Post-Filtering
- Post-filtering is meant for re-ranking the search results in response to the user’s request after measuring embeddings relevance. Dynamic post-filtering is the system that converts originally searched law cases into enhanced results through the following three different post-filtering techniques: Popularity-based filtering, User-based filtering, and Online-based filtering. They dynamically filter the law cases based on the precedent views, user, and search volume.
+ Post-filtering is meant for re-ranking the search results in response to the user’s request after measuring embeddings relevance. Dynamic post-filtering is the system that converts originally searched case law into enhanced results through the following three different post-filtering techniques: Popularity-based filtering, User-based filtering, and Online-based filtering. They dynamically filter the case law based on the precedent views, user, and search volume.
  
 
 ## 5. Evaluation
