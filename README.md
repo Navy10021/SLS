@@ -49,3 +49,6 @@ Experimental results demonstrate that our parallel clustering is faster and more
 ## 5. Evaluation
 
 Rank-less Recommendation metrics.
+
+
+![results_metrics](https://user-images.githubusercontent.com/105137667/174745498-ed65fda1-493b-4ae1-80c5-21e0e34db4ef.jpg)
