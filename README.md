@@ -2,7 +2,7 @@
 
  We propose Semantic Legal Searcher which is a new conceptual case law search procedure. Our main contributions are as follows:
  
- 1.	We introduce a Clean Korean Legal Corpus (CKLC). This corpus consists of 52.9 million words of a pre-processed Korean legal text published from the year of 1954 to the present year and they were pre-processed.
+ 1.	We introduce a Clean Korean Legal Corpus (CKLC). This corpus consists of 2.2 million sentences of Korean legal text published from the year of 1954 to the present year and they were pre-processed.
  2.	We create KoLawBERT, pre-trained language models trained on the Clean  Korean Legal Corpus by applying various masked language modeling (MLM) methods. Training with MLM allows language models to better understand the language in a more specific domain. KoLawBERT was shaped with three popular masking techniques: BERT static masking, Roberta dynamic masking, and ALBERT parameter-sharing.
  3.	We design the Semantic Legal Searcher framework by combining semantic document search with cluster-based topic modeling. Topic modeling is a method to extract topics within documents. Our model finds semantically similar precedents by matching the similarity between document embeddings and query embeddings, and at the same time extracts representative keywords and topics of each precedent through topic modeling.
  4.	We provide enhanced search results through Dynamic post-filtering. When a user searches for relevant case law, the system dynamically re-ranking the search results based on the search popularity, user, and search volumes.
