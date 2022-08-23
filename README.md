@@ -2,10 +2,10 @@
 
  We propose Semantic Legal Searcher which is a new conceptual case law search procedure. Our main contributions are as follows:
  
- 1.	We introduce a Clean Korean Legal Corpus (CKLC). This corpus consists of 2.2 million sentences of Korean legal text published from 1954 to the present year and they were pre-processed.
- 2. We created various legal-based pre-learning models such as token-level PLMs named KoLawBERT and sentence-level PLM. KoLawBERT is trained on the CKLC by applying Masked Language Modeling (MLM) methods. Training with MLM allows language models to better understand the language in a more specific domain. KoLawBERT was shaped with three popular masking techniques: BERT static masking, Roberta dynamic masking, and ALBERT parameter-sharing. Also, we can obtain sentence-level PLM that is fine-tuned by an unsupervised pretraining method called Transformer-based Sequential Denoising Auto-Encoder (TSDAE).
- 3. We design the Semantic Legal Searcher framework by combining semantic document search with cluster-based topic modeling. Topic modeling is a method to extract topics within documents. Our model finds semantically similar precedents by matching the similarity between document embeddings and query embeddings, and at the same time extracts representative keywords and topics of each precedent through topic modeling.
- 4.	We provide enhanced search results through Dynamic post-filtering. When a user searches for relevant case law, the system dynamically re-ranking the search results based on the search popularity, user, and search volumes.
+ 1)	We introduce a Clean Korean Legal Corpus (CKLC). This corpus consists of 2.2 million sentences of Korean legal text published from 1954 to the present year and they were pre-processed.
+ 2) We created various legal-based pre-learning models such as token-level PLMs named KoLawBERT and sentence-level PLM. KoLawBERT is trained on the CKLC by applying Masked Language Modeling (MLM) methods. Training with MLM allows language models to better understand the language in a more specific domain. KoLawBERT was shaped with three popular masking techniques: BERT static masking, Roberta dynamic masking, and ALBERT parameter-sharing. Also, we can obtain sentence-level PLM that is fine-tuned by an unsupervised pretraining method called Transformer-based Sequential Denoising Auto-Encoder (TSDAE).
+ 3) We design the Semantic Legal Searcher framework by combining semantic document search with cluster-based topic modeling. Topic modeling is a method to extract topics within documents. Our model finds semantically similar precedents by matching the similarity between document embeddings and query embeddings, and at the same time extracts representative keywords and topics of each precedent through topic modeling.
+ 4)	We provide enhanced search results through Dynamic post-filtering. When a user searches for relevant case law, the system dynamically re-ranking the search results based on the search popularity, user, and search volumes.
 
  Semantic Legal Searcher can provide users with more substantial and diverse information regardless of whether they are lawyers or not. Moreover, we have verified experimentally the practicality of the model by testing for both lawyers and ordinary students without legal domain knowledge.
  
@@ -33,7 +33,7 @@
 ![image](https://user-images.githubusercontent.com/105137667/186151462-b9b9ee81-bb83-431f-b190-86242ce1d9fe.png)
 
 
-## 3. Cluster-based Simple Topic Modeling
+## 4. Cluster-based Simple Topic Modeling
 
  Clustering-based topic modeling is using a clustering framework with contextualized document embeddings for topic modeling. Adding a clustering-based topic modeling in the semantic document search process has two advantages. First, the user can see not only the similarity between the query input and the search results but also the semantic relationships between the search results provided. Second, the latent space representation of the search result is explainable since latent topics and keywords in clustered data are discovered through clustering-based topic modeling. We develop a simple cluster-based topic modeling focused on speed.
  
@@ -47,11 +47,11 @@ Experimental results demonstrate that our parallel clustering is faster and more
 ![parallel_clustering_speed](https://user-images.githubusercontent.com/105137667/172763944-19bf4646-861b-432c-8e71-84dc95bf80a5.jpg)
 
 
-## 4. Dynamic Post-Filtering
+## 5. Dynamic Post-Filtering
  Post-filtering is meant for re-ranking the search results in response to the user’s request after measuring embeddings relevance. Dynamic post-filtering is the system that converts originally searched case law into enhanced results through the following three different post-filtering techniques: Popularity-based filtering, User-based filtering, and Online-based filtering. They dynamically filter the case law based on the precedent views, user, and search volume.
  
 
-## 5. Evaluation
+## 6. Evaluation
 
 Rank-less Recommendation metrics.
 
