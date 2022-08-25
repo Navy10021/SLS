@@ -20,7 +20,7 @@
 
 ## 2. KoLawBERT
 
- We release the pre-trained language models by applying the above three masked language modeling methods(BERT, RoBERTa, ALBERT), KoLawBERT trained on Clean Korean Legal Corpus (CKLC). Our experiment result shows that the Roberta-based KoLawBERT model encodes semantic information better than others.
+ We release the pre-trained language models by applying the above three masked language modeling methods(BERT, RoBERTa, ALBERT). The KoLawBERT is pre-trained or re-trained on Clean Korean Legal Corpus (CKLC). Our experiment result shows that the Roberta-based KoLawBERT model encodes semantic information better than others.
 
 ## 3. Semantic Legal Embeddings
 
