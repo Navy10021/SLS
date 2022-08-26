@@ -14,7 +14,7 @@
 
  ## 1. Overall Pipeline
  
- The basic process of the Semantic Legal Searcher is divided into four steps as shown in Figure 1.  In the first step, each document in the legal database is converted into the form of embeddings using PLM. In the next step, these embeddings are parallelly clustered and representations of topics and keywords are extracted from clusters using a class-based TF-IDF formula. In the third step, the relevance between the query vector and legal document embeddings is measured by Euclidean-distance or Dot-product. Lastly, to provide users with optimal search results, relevant precedents are re-ranked through dynamic post-filtering.
+ The basic process of the Semantic Legal Searcher is divided into four steps as shown in Figure 1.  In the first step, each document in the legal database is converted into the form of embeddings using the PLMs we designed. In the next step, these embeddings are parallelly clustered and representations of topics and keywords are extracted from clusters using a class-based TF-IDF formula. In the third step, the relevance between the query vector and legal document embeddings is measured by Euclidean-distance or Dot-product. Lastly, to provide users with optimal search results, relevant precedents are re-ranked through dynamic post-filtering.
 
 ![image](https://user-images.githubusercontent.com/105137667/186150572-0d86602e-63e4-48f7-9dba-c299f2805f2e.png)
 
