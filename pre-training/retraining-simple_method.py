@@ -39,13 +39,13 @@ args = TrainingArguments(
     output_dir = "./output/mlm-roberta",
     overwrite_output_dir = True,
     per_device_train_batch_size = 8,
-    num_train_epochs = 3,
+    num_train_epochs = 12,
     seed = 1,
-    save_steps = 1000,
-    save_total_limit = 3,
+    logging_steps = 1000,
+    save_steps = 3000,
+    save_total_limit = 5,
     )
 
-# Using Trainer
 trainer = Trainer(model = model,
                   args = args,
                   data_collator = data_collator,
