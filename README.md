@@ -20,7 +20,7 @@
 
 ## 2. KoLawBERT
 
- We can use existing PLMs such as BERT in the Semantic Legal Searcher framework. However, this way is too simple and often not competitive with other methods regarding search accuracy in the legal field. Therefore, we release pre-trained language models, KoLawBERT, trained on our legal corpus by applying the popular three masked language modeling methods (BERT, Roberta, ALBERT).
+ We can use existing PLMs such as BERT in the Semantic Legal Searcher framework. However, this way is too simple and often not competitive with other methods regarding search accuracy in the legal field. Therefore, we release pre-trained language models, KoLawBERT, trained on our legal corpus by applying the popular three masked language modeling methods: BERT, Roberta and ALBERT.
 
 ## 3. Semantic Legal Embeddings
 
