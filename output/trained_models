@@ -3,8 +3,8 @@
 # 1. tsdae-bert
 # 2. tsdae-roberta
 # 3. pre-trained KoLawBERT
-# 4. pre-trained RoBERTa
+# 4. pre-trained KoLawRoBERTa
 # 5. re-trained KoLaWBERT
-# 6. re-trained KoLawBERT
+# 6. re-trained KoLawRoBERTa
 # 7. semantic legal embeddings based on supervised learning(KoLawBERT, KoLawRoBERTa)
 # 8. semantic legal embeddings based on unsupervised learning(TSDAE)
