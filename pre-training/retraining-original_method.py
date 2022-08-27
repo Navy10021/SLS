@@ -64,7 +64,7 @@ loader = torch.utils.data.DataLoader(dataset, batch_size = 16, shuffle = True)
 ##############
 model.to(device)
 optim = torch.optim.AdamW(model.parameters(), lr=5e-5)
-epochs = 3
+epochs = 10
 
 for epoch in range(epochs):
     iter = tqdm(loader, leave = True)
@@ -95,7 +95,7 @@ torch.save(model, 'output/mlm-retrained-bert')
 
 #from transformers import TrainingArguments, Trainer
 # 1. Initialize
-#args = TrainingArguments(output_dir='./output/mlm-bert', per_device_train_batch_size = 8, num_train_epochs = 3, seed = 1, save_steps = 1000, save_total_limit = 3)
+#args = TrainingArguments(output_dir='./output/mlm-bert', per_device_train_batch_size = 8, num_train_epochs = 10, seed = 1, logging_steps = 1000, save_steps = 1000, save_total_limit = 3)
 
 # 2. Train with Trainer
 #trainer = Trainer(model = model, args = args, train_dataset = dataset)
