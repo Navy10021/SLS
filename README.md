@@ -52,7 +52,7 @@
 As a result of the parallel clustering contextual embeddings, legal documents are grouped into semantically similar documents and rearranged by cluster size. Experimental results evaluated on the MovieLens dataset demonstrate that our parallel clustering is faster and more coherent in document embedding clustering than other famous clustering methods such as K-means, Agglomerative Clustering, DBSCAN, and HDBSCAN.
 
 
-![image](https://user-images.githubusercontent.com/105137667/187072187-bd4d7de9-8b6a-4eba-a275-ca285c20a0f7.png)
+![image](https://user-images.githubusercontent.com/105137667/187072253-d44af179-807b-4c99-84c7-fbd27eb67e0c.png)
 
 ## 5. Dynamic Post-Filtering
  Post-filtering is meant for re-ranking the search results in response to the user’s request after measuring embeddings relevance. Dynamic post-filtering provides the improvement over original searched results by way of the following three different post-filtering techniques: Popularity-based filtering, User-based filtering, and Online-based filtering. They dynamically filter the case law based on the precedent views, user, and search volume.
