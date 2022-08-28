@@ -40,7 +40,15 @@
  
 ![topic_modeling](https://user-images.githubusercontent.com/105137667/185838139-d6ed8874-2715-48e1-98ef-1cb8317f7a19.jpg)
  
- 
+
+### Parallel Clustering Algorithm
+ 1. Randomly split up the entire document embeddings into N group sizes. These serve as initial N cluster assignments for the observations.
+ 2. Iteration until the cluster assignments stop changing:
+  2-1. Parallelly for each of the N groups, compute the group centroid(or group head) and then filter embeddings with low similarity to the centroid. Here the n-th cluster centroid is the embedding of the highest cosine similarity score in the n-th cluster.
+  2-2. Calculate the cosine similarity between group centroids, then merge groups with high similarity scores.
+  2-3. For all ungrouped embeddings, perform a nearest-neighbor search with all centroids, then assign them to the nearest group if they are over the threshold.
+ 3. Stack the clustered results in order of cluster size.
+
 Experimental results evaluated on the MovieLens dataset demonstrate that our parallel clustering is faster and more coherent in document embedding clustering than other famous clustering methods such as K-means, Agglomerative Clustering, DBSCAN, and HDBSCAN.
 
 
