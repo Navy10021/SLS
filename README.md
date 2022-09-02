@@ -62,5 +62,7 @@ As a result of the parallel clustering contextual embeddings, legal documents ar
 
 Rank-less Recommendation metrics.
 
+![results_metrics](https://user-images.githubusercontent.com/105137667/188052022-3034afa7-a793-46f3-84ee-12e83a3fd701.jpg)
 
-![results_metrics](https://user-images.githubusercontent.com/105137667/174745498-ed65fda1-493b-4ae1-80c5-21e0e34db4ef.jpg)
+
+
