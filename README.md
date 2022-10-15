@@ -16,7 +16,8 @@
  
  The basic process of the Semantic Legal Searcher is divided into four steps as shown in Figure 1.  In the first step, each document in the legal database is converted into the form of embeddings using the PLMs we designed. In the next step, these embeddings are parallelly clustered and representations of topics and keywords are extracted from clusters using a class-based TF-IDF formula. In the third step, the relevance between the query vector and legal document embeddings is measured by Euclidean-distance or Dot-product. Lastly, to provide users with optimal search results, relevant precedents are re-ranked through dynamic post-filtering.
 
-![image](https://user-images.githubusercontent.com/105137667/186150572-0d86602e-63e4-48f7-9dba-c299f2805f2e.png)
+![overall_2](https://user-images.githubusercontent.com/105137667/195964428-cd0b99ca-657b-437e-b896-ad6203c3a249.jpg)
+
 
 ## 2. KoLawBERT
 
@@ -30,14 +31,16 @@
  
   - Unsupervised Training: Another approach is to perform the Transformer-based Sequential Denoising Auto-Encoder (TSDAE) pretraining method (Kexin Wang., 2021). TSDAE introduces noise to input text by removing about 60% of word-level tokens. These damaged sentences are encoded by the Transformer encoder network into sentence vectors and then the Transformer decoder attempts to predict the original input text from the damaged encoding vector. 
 
-![figure_2](https://user-images.githubusercontent.com/105137667/195963706-f3e4d336-8f79-4a62-aad3-dc48ad73331a.jpg)
+
+![semantic_legal_emb_2](https://user-images.githubusercontent.com/105137667/195964435-ddfd7782-3541-4b12-b0cf-45cea5a182a7.jpg)
+
 
 
 ## 4. Cluster-based Simple Topic Modeling
 
  Clustering-based topic modeling is using a clustering framework with contextualized document embeddings for topic modeling. Adding a clustering-based topic modeling in the semantic document search process has two advantages. First, the user can see not only the similarity between the query input and the search results but also the semantic relationships between the search results provided. Second, the latent space representation of the search result is explainable since latent topics and keywords in clustered data are discovered through clustering-based topic modeling. We develop a simple cluster-based topic modeling focused on speed.
  
-![topic_modeling](https://user-images.githubusercontent.com/105137667/185838139-d6ed8874-2715-48e1-98ef-1cb8317f7a19.jpg)
+![topic_modeling](https://user-images.githubusercontent.com/105137667/195964449-495c48b7-4695-4225-b295-abaee39d7355.jpg)
 
 ### Class-based TF-IDF Formula
 
