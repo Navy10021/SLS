@@ -30,24 +30,20 @@
  
   - Unsupervised Training: Another approach is to perform the Transformer-based Sequential Denoising Auto-Encoder (TSDAE) pretraining method (Kexin Wang., 2021). TSDAE introduces noise to input text by removing about 60% of word-level tokens. These damaged sentences are encoded by the Transformer encoder network into sentence vectors and then the Transformer decoder attempts to predict the original input text from the damaged encoding vector. 
 
-![image](https://user-images.githubusercontent.com/105137667/186151462-b9b9ee81-bb83-431f-b190-86242ce1d9fe.png)
+![figure_2](https://user-images.githubusercontent.com/105137667/195963706-f3e4d336-8f79-4a62-aad3-dc48ad73331a.jpg)
 
 
 ## 4. Cluster-based Simple Topic Modeling
 
  Clustering-based topic modeling is using a clustering framework with contextualized document embeddings for topic modeling. Adding a clustering-based topic modeling in the semantic document search process has two advantages. First, the user can see not only the similarity between the query input and the search results but also the semantic relationships between the search results provided. Second, the latent space representation of the search result is explainable since latent topics and keywords in clustered data are discovered through clustering-based topic modeling. We develop a simple cluster-based topic modeling focused on speed.
  
- 
 ![topic_modeling](https://user-images.githubusercontent.com/105137667/185838139-d6ed8874-2715-48e1-98ef-1cb8317f7a19.jpg)
+
+![c-tf-idf](https://user-images.githubusercontent.com/105137667/195963697-5bac9855-02f6-4c82-9f9c-2e363828e419.jpg)
  
 
 ### Parallel Clustering Algorithm
- 1. Randomly split up the entire document embeddings into N group sizes. These serve as initial N cluster assignments for the observations.
- 2. Iteration until the cluster assignments stop changing:
-    - 2-1. Parallelly for each of the N groups, compute the group centroid(or group head) and then filter embeddings with low similarity to the centroid. Here the n-th cluster centroid is the embedding of the highest cosine similarity score in the n-th cluster.
-    - 2-2. Calculate the cosine similarity between group centroids, then merge groups with high similarity scores.
-    - 2-3. For all ungrouped embeddings, perform a nearest-neighbor search with all centroids, then assign them to the nearest group if they are over the threshold.
- 3. Stack the clustered results in order of cluster size.
+![parallel_clustering_algorithm](https://user-images.githubusercontent.com/105137667/195963681-8ea7bd18-39fd-44de-9f15-c2ac2b75a559.jpg)
 
 As a result of the parallel clustering contextual embeddings, legal documents are grouped into semantically similar documents and rearranged by cluster size. Experimental results evaluated on the MovieLens dataset demonstrate that our parallel clustering is faster and more coherent in document embedding clustering than other famous clustering methods such as K-means, Agglomerative Clustering, DBSCAN, and HDBSCAN.
 
