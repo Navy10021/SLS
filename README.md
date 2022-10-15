@@ -39,6 +39,8 @@
  
 ![topic_modeling](https://user-images.githubusercontent.com/105137667/185838139-d6ed8874-2715-48e1-98ef-1cb8317f7a19.jpg)
 
+### Class-based TF-IDF Formula
+
 ![c-tf-idf](https://user-images.githubusercontent.com/105137667/195963697-5bac9855-02f6-4c82-9f9c-2e363828e419.jpg)
  
 
