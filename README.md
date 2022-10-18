@@ -29,7 +29,7 @@
  
   - Supervised Training: The first strategy for sentence embedding learning is leveraging siamese and triplet networks (Schroff et al., 2015) to derive a long text into semantic vector space efficiently. Natural Language Inference (NLI) and Semantic Textual Similarity (STS) is the most common supervised approach to fine-tuning semantic embedding. Both NLI and STS datasets contain sentence pairs labeled. The language model learns how to distinguish between similar and dissimilar sentence pairs using the optimization functions like softmax loss or cosine similarity loss (Reimers and Gurevych., 2019).
  
-  - Unsupervised Training: Another approach is to perform the Transformer-based Sequential Denoising Auto-Encoder (TSDAE) pretraining method (Kexin Wang., 2021). TSDAE introduces noise to input text by removing about 60% of word-level tokens. These damaged sentences are encoded by the Transformer encoder network into sentence vectors and then the Transformer decoder attempts to predict the original input text from the damaged encoding vector. 
+  - Unsupervised Training: Another approach is to perform the Transformer-based Sequential Denoising Auto-Encoder (TSDAE) pretraining method (Kexin Wang., 2021). TSDAE introduces noise to input text by removing about 60% of word-level tokens. These damaged sentences are encoded by the Transformer encoder into sentence vectors and then another decoder network attempts to predict the original input text from the damaged encoding vector. 
 
 
 ![semantic_legal_emb_2](https://user-images.githubusercontent.com/105137667/195964435-ddfd7782-3541-4b12-b0cf-45cea5a182a7.jpg)
