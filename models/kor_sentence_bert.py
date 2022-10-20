@@ -7,9 +7,11 @@ import pandas as pd
 from sentence_transformers import SentenceTransformer, models
 from sentence_transformers.readers import InputExample
     
-###################### 
-# Make Sentence BERT #
-######################
+    
+############################# 
+# Make Korean Sentence BERT #
+#############################
+
 def make_sentenceBERT(model_path, tokenizer_path):
     # 1. Load KoLawBERT
     word_embedding_model = models.Transformer(model_name_or_path = model_path,
@@ -27,9 +29,11 @@ def make_sentenceBERT(model_path, tokenizer_path):
     return model
 
 
+
 ########################### 
 # KorNLI Fine-Tuning Task #
 ###########################
+
 # Make KorNLI Dataset for Training
 def drop_kornli(df):
     df = df.dropna(how='any')
@@ -48,9 +52,11 @@ def make_kornli_dataset(df):
     return samples
 
 
+
 ########################### 
 # KorSTS Fine-Tuning Task #
 ###########################
+
 def drop_korsts(df):
     df = df.dropna(how='any')
     df = df.drop_duplicates()
