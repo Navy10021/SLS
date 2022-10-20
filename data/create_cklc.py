@@ -43,7 +43,7 @@ cases.to_csv('../data/cases(2022-08-21).csv', index=False)
 ## 2. Extractions ##
 ####################
 
-case_list = pd.read_csv('../data/cases(2022-08-21).csv')
+case_list = pd.read_csv('../data/cases(2022-10-20).csv')
 print(">> Total number of precedents in Korean courts : {}".format(len(case_list)))
 
 data_dict = {'judgment_issue' : [], 'judgment_summary' : [], 'judgment_contents' : []}
@@ -76,8 +76,9 @@ for link in tqdm(case_link):
     else:
         data_dict['judgment_contents'].append(None)
 
-#with open('original_legal_data.pickle', 'wb') as f:
-#    pickle.dump(data_dict, f, pickle.HIGHEST_PROTOCOL)
+# Save to DataFrame
+df.to_csv('./data/law_cases(20221020).csv', index=False)
+user_df.to_csv('./data/user_views.csv', index=False)
 
 ############################
 ## 3. Text Preprocessing  ##
