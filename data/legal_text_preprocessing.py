@@ -15,7 +15,7 @@ df = pd.read_csv(data_path)
 df = df.dropna()
 df = df.drop_duplicates(subset=['judgment_issue'])
 
-# Law cases since 1990
+# Law cases since 1990(your choice)
 df = df.sort_values(by = "date")
 df = df[df['date'] > 19900000.0]
 
