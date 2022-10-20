@@ -4,9 +4,11 @@ import hanja
 from tqdm import tqdm
 import json
 
+
 ###################
 ## Legal Dataset ##
 ###################
+
 # Load Dataframe
 data_path = './data/law_cases(20221020).csv'
 df = pd.read_csv(data_path)
@@ -18,6 +20,7 @@ df = df.sort_values(by = "date")
 df = df[df['date'] > 19900000.0]
 
 print("Legal Dataset Size : {}".format(len(df)))
+
 
 ############################
 ## Preprocessing function ##
@@ -105,9 +108,11 @@ def cleansing_contents(text_data):
     return c_main, c_reason
 
 
+
 #############################
 ## Make Clean legal Corpus ##
 #############################
+
 df_list = df.to_dict('records')
 corpus = list()
 
@@ -131,6 +136,7 @@ for idx, row in enumerate(tqdm(df_list)):
     
 
 print("  \n === Legal Corpus Examples === \n  {}".format(corpus[:3]))
+
 
 
 ##########################
