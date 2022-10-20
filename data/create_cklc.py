@@ -9,6 +9,7 @@ import re
 ##############################################
 ## 1. Crawling Korean Law Cases(1954 ~ Now) ##
 ##############################################
+
 url = "https://www.law.go.kr/your_url"
 response = urlopen(url).read()
 xtree = ET.fromstring(response)
@@ -41,6 +42,7 @@ cases.to_csv('../data/cases(2022-08-21).csv', index=False)
 ####################
 ## 2. Extractions ##
 ####################
+
 case_list = pd.read_csv('../data/cases(2022-08-21).csv')
 print(">> Total number of precedents in Korean courts : {}".format(len(case_list)))
 
@@ -80,6 +82,7 @@ for link in tqdm(case_link):
 ############################
 ## 3. Text Preprocessing  ##
 ############################
+
 def clean_special(sent):
     # remove special characters
     sent = re.sub("[,,ㆍ·\'\"’‘”“!?\\‘|\<\>`\'[\◇…]", " ", sent)
@@ -142,6 +145,7 @@ for row in data_dict['judgment_issue']:
 ####################################
 ## 4. Make Text File line by line ##
 ####################################
+
 small_cklc = issue_list + summary_list
 large_cklc = small_cklc + contents_list
 sample_cklc = small_cklc[:1000]
