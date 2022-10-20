@@ -36,7 +36,7 @@
 
 
 
-## 4. Cluster-based Simple Topic Modeling
+## 4. Parallel Clustering-based Topic Modeling
 
  Clustering-based topic modeling is using a clustering framework with contextualized document embeddings for topic modeling. Adding a clustering-based topic modeling in the semantic document search process has two advantages. First, the user can see not only the similarity between the query input and the search results but also the semantic relationships between the search results provided. Second, the latent space representation of the search result is explainable since latent topics and keywords in clustered data are discovered through clustering-based topic modeling. We develop a simple cluster-based topic modeling focused on speed.
  
