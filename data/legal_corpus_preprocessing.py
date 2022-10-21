@@ -5,9 +5,9 @@ from tqdm import tqdm
 import json
 
 
-###################
-## Legal Dataset ##
-###################
+######################
+## 1. Legal Dataset ##
+######################
 
 # Load Dataframe
 data_path = './data/law_cases(20221020).csv'
@@ -22,9 +22,9 @@ df = df[df['date'] > 19900000.0]
 print("Legal Dataset Size : {}".format(len(df)))
 
 
-############################
-## Preprocessing function ##
-############################
+###############################
+## 2. Preprocessing function ##
+###############################
 
 # 1. Filtering Chinese characters
 def cleansing_chinese(sent):
@@ -109,9 +109,9 @@ def cleansing_contents(text_data):
 
 
 
-################################################
-## Make Clean legal Corpus (Precedent Corpus) ##
-################################################
+###################################################
+## 3. Make Clean legal Corpus (Precedent Corpus) ##
+###################################################
 
 df_list = df.to_dict('records')
 corpus = list()
@@ -139,9 +139,9 @@ print("  \n === Legal Corpus Examples === \n  {}".format(corpus[:3]))
 
 
 
-##########################
-## Convert to json file ##
-##########################
+#############################
+## 4. Convert to json file ##
+#############################
 
 with open('./data/legal_corpus.json', 'w') as f:
     json.dump(corpus, f)
