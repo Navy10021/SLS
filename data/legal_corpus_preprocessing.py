@@ -125,12 +125,12 @@ for idx, row in enumerate(tqdm(df_list)):
     data['law_case']['case_num'] = row['case_number']
     data['law_case']['issue'] = cleansing_sent(row['judgment_issue'])
     data['law_case']['summary'] = cleansing_sent(row['judgment_summary'])
-    data['law_case']['contents'] = dict()
+    data['law_case']['full_text'] = dict()
 
     if len(row['judgment_contents']) < 100:
         pass
     else:
-        data['law_case']['contents']['main'], data['law_case']['contents']['reasons'] = cleansing_contents(row['judgment_contents'])
+        data['law_case']['full_text']['ruling'], data['law_case']['full_text']['reasoning'] = cleansing_contents(row['judgment_contents'])
 
     corpus.append(data)
     
