@@ -109,9 +109,9 @@ def cleansing_contents(text_data):
 
 
 
-#############################
-## Make Clean legal Corpus ##
-#############################
+################################################
+## Make Clean legal Corpus (Precedent Corpus) ##
+################################################
 
 df_list = df.to_dict('records')
 corpus = list()
