@@ -133,9 +133,10 @@ for idx, row in enumerate(tqdm(df_list)):
         data['law_case']['full_text']['ruling'], data['law_case']['full_text']['reasoning'] = cleansing_contents(row['judgment_contents'])
 
     corpus.append(data)
-    
 
-print("  \n === Legal Corpus Examples === \n  {}".format(corpus[:3]))
+    
+print(" >> Number of Supreme Court precedents since 1990 : {} \n".format(len(corpus)))
+print("  \n === Legal Corpus Examples === \n  {}".format(corpus[-5:]))
 
 
 
