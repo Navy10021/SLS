@@ -32,7 +32,7 @@
   - Unsupervised Training: Another approach is to perform the Transformer-based Sequential Denoising Auto-Encoder (TSDAE) pretraining method (Kexin Wang., 2021). TSDAE introduces noise to input text by removing about 60% of word-level tokens. These damaged sentences are encoded by the Transformer encoder into sentence vectors and then another decoder network attempts to predict the original input text from the damaged encoding vector. 
 
 
-![semantic_legal_emb_2](https://user-images.githubusercontent.com/105137667/195964435-ddfd7782-3541-4b12-b0cf-45cea5a182a7.jpg)
+![semantic_legal_emb](https://user-images.githubusercontent.com/105137667/197317275-c62f246a-9c4f-46e4-a1be-b1dd02e2d21d.jpg)
 
 
 
