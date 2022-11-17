@@ -48,7 +48,7 @@ To adapt the KoLawBERT to produce semantic legal embeddings, we typically need a
 ![c-tf-idf](https://user-images.githubusercontent.com/105137667/202361735-435e330a-9b2f-4c84-8c19-4c514220b3c4.jpg)
 
 
-## 6. Multi-interactions
+## 6. Estimate Relevance with Multi-interactions
  As distance metrics, Cosine similarity (normalized dot product) and Euclidean distance are good measurements that allow researchers to quantify the similarity between two or more vectors. Semantic Legal Searcher computes the multi-interactions, both the relevance of the input query q to the legal document d and to the keyword k are estimated by distance metrics. Let E_q,E_d,E_k (where N is the fixed length of the token sequence;) be the final vector sequences derived from q, d, k. The multi-interactions scoring mechanism is given as follows:
 
 ![multi-interacrtions](https://user-images.githubusercontent.com/105137667/202362603-567b01a4-968e-402e-8a02-60ec59a28e7a.jpg)
