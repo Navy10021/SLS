@@ -32,7 +32,7 @@ To adapt the KoLawBERT to produce semantic legal embeddings, we typically need a
 ![Figure_3](https://user-images.githubusercontent.com/105137667/202361435-1c196824-7a26-48c5-b8e2-0d290d358904.jpg)
 
 
-## 4. Parallel Clustering-based Topic Modeling
+## 5. Parallel Clustering-based Topic Modeling
 
  Topic modeling is an unsupervised method to extract latent keywords and uncover latent themes within documents. Furthermore, clustering-based topic modeling is an advanced technique using various clustering frameworks with embeddings for topic modeling. Adding topic modeling in the semantic search process has distinct advantages in interpretability and search quality. First, representations of the search results are interpretable since literal topics and keywords in the latent vector space are discovered from embeddings clustering and topic modeling. Second, we can obtain not only document embeddings but also token-based keyword vector representation. Thus, we increase search accuracy by leveraging multi-interactions, which measures the relevance of not a single set of vectors from queries and documents but multi-sets of vectors by adding keywords embeddings. We create a simple parallel cluster-based topic modeling focused on speed.
  
@@ -47,11 +47,18 @@ To adapt the KoLawBERT to produce semantic legal embeddings, we typically need a
 
 ![c-tf-idf](https://user-images.githubusercontent.com/105137667/202361735-435e330a-9b2f-4c84-8c19-4c514220b3c4.jpg)
 
-## 5. Dynamic Post-Filtering
+
+## 6. Multi-interactions
+ As distance metrics, Cosine similarity (normalized dot product) and Euclidean distance are good measurements that allow researchers to quantify the similarity between two or more vectors. Semantic Legal Searcher computes the multi-interactions, both the relevance of the input query q to the legal document d and to the keyword k are estimated by distance metrics. Let E_q,E_d,E_k (where N is the fixed length of the token sequence;) be the final vector sequences derived from q, d, k. The multi-interactions scoring mechanism is given as follows:
+
+〖Score〗_(q,d,k)= ∑_(i=1)^N▒〖E_(q_i )∙〖E_(d_i)^T∙Softmax(E〗_(q_i )∙E_(k_i)^T)〗
+
+
+## 7. Dynamic Post-Filtering
  Post-filtering is meant for re-ranking the search results in response to the user’s request after measuring embeddings relevance. Dynamic post-filtering provides the improvement over original searched results by way of the following three different post-filtering techniques: Popularity-based filtering, User-based filtering, and Online-based filtering. They dynamically filter the case law based on the precedent views, user, and search volume.
  
 
-## 6. Evaluation & Results
+## 8. Evaluation & Results
 
 We conducted three different NLP downstream tasks for evaluating performance of KoLawBERT in Semantic Legal Searcher framework: 1) Korean Natural Language Inference; 2) Korean Semantic Textual Similarity; 3) Legal Question Answering.
 
