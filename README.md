@@ -16,7 +16,8 @@
  
  The basic process of the SLS is divided into four steps as shown in Figure 2. In the first step, each document in the legal database is converted into the form of embeddings using the PLMs we created. In the next step, these embeddings are parallelly clustered and representations of keywords are extracted from clusters using a class-based TF-IDF formula (Grootendorst., 2022). In the third step, named multi-interactions, both the relevance of the query vector to the legal document embeddings and to the keyword embeddings are estimated by distance metrics such as cosine similarity or Euclidean distance. Lastly, to provide users with optimal search results, relevant precedents are re-ranked through dynamic post-filtering.
 
-![Figure_2](https://user-images.githubusercontent.com/105137667/202361000-9abe0071-e5d6-4966-b168-57daaf7b11a1.jpg)
+![Figure_2](https://user-images.githubusercontent.com/105137667/203198515-92e6d9ce-489c-4fa9-8812-cb7813e62202.jpg)
+
 
 ## 2. Clean Korean Legal Corpus(CKLC)
 We created a Clean Korean Legal Corpus (CKLC), a new dataset of Korean legal texts. It is a pre-processed corpus consisting of 1.12 million cases of judicial decisions from the Supreme Court of Korea and statutes published from 1954 to the current year. The total number of sentences in CKLC is 5.3 million, and Table 1 shows the basic text statistics. The dataset consists of five distinct sections for each law case: 1) case name; 2) case number; 3) judgment issue, 4) judgment summary; 5) full-text; 6) label.
