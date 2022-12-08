@@ -8,7 +8,7 @@
 # STEP 1 : Load DataFrame & PLMs  #
 ###################################
 import pandas as pd
-# 1. Load Legal Dataset(Get Only Judicial precedent data)
+# 1. Load Legal Dataset(Get Judicial precedent data)
 df = pd.read_csv('./data/law_cases(20221020).csv')
 df = df.dropna(how = 'any')
 
