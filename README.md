@@ -8,23 +8,23 @@
 
  ## 1. Overall Pipeline
  
- The process of the SLS is divided into four steps. In the first step, each document in the legal database is encoded into embeddings and then fulfilled embedding modelization called split and merge. In the next step, these embeddings are parallelly clustered quickly, and then keywords are extracted by our topic modeling technique. In the third step, named multi-interactions, both the relevance of the query vector to the legal document embeddings and to the keyword embeddings are estimated by distance metrics. Lastly, the model provides user search results based on their relevance score.
+ The process of the SLS is divided into four steps. In the first step, each document in the legal database is encoded into embeddings and then fulfilled embedding modelization called split and merge. In the next step, these embeddings are parallelly clustered quickly, and then keywords are extracted by our topic modeling technique. In the third step, named multi-interactions, both the relevance of the query vector to the legal document embeddings and to the keyword embeddings are estimated by distance metrics. Lastly, the model provides user search results based on their relevance score. 
 
 ![Figure_2](https://user-images.githubusercontent.com/105137667/206458930-48d18d66-868a-4cb1-beba-ee9eafb2266c.jpg)
 
 
-## 2. Clean Korean Legal Corpus(CKLC)
+## 2. Clean Korean Legal Corpus(Dataset)
 We created a Clean Korean Legal Corpus (CKLC), a new dataset of Korean legal texts. It is a pre-processed corpus consisting of 150 thousand cases of judicial decisions from the Supreme Court of Korea and statutes published from 1954 to the current year. The total number of sentences in CKLC is 5.3 million. The dataset consists of five distinct sections for each law case: 1) case name; 2) case number; 3) judgment issue, 4) judgment summary; 5) full-text; 6) label.
 
 
-## 3. KoLawBERT
+## 3. KoLawBERT(PLMs)
 
 We can use existing PLMs such as BERT in the SLS framework. However, this way is less competitive in the field of legal information retrieval. Therefore, we release a KoLawBERT pre-trained on CKLC (§2.) by benchmarking the popular two techniques: Masked Language Modeling (MLM) and Transformer-based Sequential Denoising Auto-Encoder (TSDAE).
 
 ![Figure_3](https://user-images.githubusercontent.com/105137667/206460566-59fb3dba-2b58-45e5-9118-68c02d8792ac.jpg)
 
 
-## 4. Parallel Clustering-based Topic Modeling
+## 4. Parallel Clustering-based TM
 
 Topic modeling is an unsupervised method to extract latent keywords and uncover latent themes within documents. Clustering-based topic modeling is an advanced technique using various clustering frameworks with embeddings for topic modeling. We create a simple parallel clustering-based topic modeling focused on speed.
 
