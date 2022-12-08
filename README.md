@@ -34,7 +34,7 @@ Topic modeling is an unsupervised method to extract latent keywords and uncover 
 ![Figure_4](https://user-images.githubusercontent.com/105137667/206460521-576070a3-7b13-4776-9d88-83181541f211.jpg)
  
 
-## 6. 3.5	Measure the Relevance of Embeddings
+## 6.	Measure the Relevance of Embeddings
  SLS computes the multi-interactions, both the relevance of the input query Q to the legal document D and to the keyword K are estimated by distance metrics.
  
 
