@@ -16,6 +16,7 @@
 ## 2. Clean Korean Legal Corpus(CKLC)
 We created a Clean Korean Legal Corpus (CKLC), a new dataset of Korean legal texts. It is a pre-processed corpus consisting of 150 thousand cases of judicial decisions from the Supreme Court of Korea and statutes published from 1954 to the current year. The total number of sentences in CKLC is 5.3 million. The dataset consists of five distinct sections for each law case: 1) case name; 2) case number; 3) judgment issue, 4) judgment summary; 5) full-text; 6) label.
 
+
 ## 3. KoLawBERT
 
 We can use existing PLMs such as BERT in the SLS framework. However, this way is less competitive in the field of legal information retrieval. Therefore, we release a KoLawBERT pre-trained on CKLC (§2.) by benchmarking the popular two techniques: Masked Language Modeling (MLM) and Transformer-based Sequential Denoising Auto-Encoder (TSDAE).
@@ -23,22 +24,14 @@ We can use existing PLMs such as BERT in the SLS framework. However, this way is
 ![Figure_3](https://user-images.githubusercontent.com/105137667/206460566-59fb3dba-2b58-45e5-9118-68c02d8792ac.jpg)
 
 
-## 4.	Embeddings modelization
-
-We propose the split and merge to control the amount of information flowing from the PLMs as well as combine separated embeddings. This technique consists of split and merge parts. 
-
-## 5. Parallel Clustering-based Topic Modeling
+## 4. Parallel Clustering-based Topic Modeling
 
 Topic modeling is an unsupervised method to extract latent keywords and uncover latent themes within documents. Clustering-based topic modeling is an advanced technique using various clustering frameworks with embeddings for topic modeling. We create a simple parallel clustering-based topic modeling focused on speed.
 
 ![Figure_4](https://user-images.githubusercontent.com/105137667/206460521-576070a3-7b13-4776-9d88-83181541f211.jpg)
  
 
-## 6.	Measure the Relevance of Embeddings
- SLS computes the multi-interactions, both the relevance of the input query Q to the legal document D and to the keyword K are estimated by distance metrics.
- 
-
-## 8. Evaluation & Results
+## 5. Evaluation
 
 We conducted three different NLP downstream tasks for evaluating performance of KoLawBERT in SLS framework: 1) Korean Natural Language Inference; 2) Korean Semantic Textual Similarity; 3) Legal Question Answering.
 
