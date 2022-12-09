@@ -64,7 +64,7 @@ class SLS():
     # Embedding Modelization #
     ##########################
 
-    # 1. Embedding Modelization with Split and Merge formula
+    # 1. Embedding Modelization with Split-Merge formula
     def gate_sum(self, vec_a, vec_b):
         concat = torch.cat((vec_a, vec_b), -1)
         context_gate = self.sigmoid(self.gate_layer(concat))
