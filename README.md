@@ -21,15 +21,15 @@ We created a Clean Korean Legal Corpus (CKLC), a new dataset of Korean legal tex
 
 We can use existing PLMs such as BERT in the SLS framework. However, this way is less competitive in the field of legal information retrieval. Therefore, we release a KoLawBERT pre-trained on CKLC (§2.) by benchmarking the popular two techniques: Masked Language Modeling (MLM) and Transformer-based Sequential Denoising Auto-Encoder (TSDAE).
 
-![Figure_3](https://user-images.githubusercontent.com/105137667/206699105-75d5f5e8-7526-4b3e-91ca-9e26ed2d4e88.jpg)
+![F_3](https://user-images.githubusercontent.com/105137667/206712633-197592fd-7b54-4157-8cd0-24610d5372b9.jpg)
 
 
 ## 4. Parallel Clustering-based TM
 
 Topic modeling is an unsupervised method to extract latent keywords and uncover latent themes within documents. Clustering-based topic modeling is an advanced technique using various clustering frameworks with embeddings for topic modeling. We create a simple parallel clustering-based topic modeling focused on speed.
 
-![Figure_4](https://user-images.githubusercontent.com/105137667/206699182-9911c7a9-5346-46a9-9f90-f26c77367162.jpg)
- 
+ ![F_4](https://user-images.githubusercontent.com/105137667/206712661-a2f9c5a1-92fb-459e-8539-0454fe5d0d14.jpg)
+
 
 ## 5. Evaluation
 
