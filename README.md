@@ -10,7 +10,7 @@
  
  The process of the SLS is divided into four steps. In the first step, each document in the legal database is encoded into embeddings and then fulfilled embedding modelization called split and merge. In the next step, these embeddings are parallelly clustered quickly, and then keywords are extracted by our topic modeling technique. In the third step, named multi-interactions, both the relevance of the query vector to the legal document embeddings and to the keyword embeddings are estimated by distance metrics. Lastly, the model provides user search results based on their relevance score. 
 
-![Figure_2](https://user-images.githubusercontent.com/105137667/206699143-92a5fdef-4429-447f-bc40-4a7761ba294e.jpg)
+![F_2](https://user-images.githubusercontent.com/105137667/206712288-5bc8e3cb-64d1-4577-a61b-01b8dcec7df6.jpg)
 
 
 ## 2. Clean Korean Legal Corpus(Dataset)
