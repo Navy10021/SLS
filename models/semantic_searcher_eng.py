@@ -213,6 +213,6 @@ class SLS():
         if print_results:
             print(">> Your query :", user_query)
             for i, out in enumerate(result):
-                print("\n >> Top {} - Paper Title : {}  \n | Cluster : {} \n | Extracted keywords : {} \n | Year : {} | Abstract : {}".format(i+1, out['title'], out['Topic'], out['keywords'],
+                print("\n >> Top {} - Paper Title : {}  \n | Cluster : {} \n | Extracted keywords : {} \n | Year : {} \n | Abstract : {}".format(i+1, out['title'], out['Topic'], out['keywords'],
                                                                                                                                                    out['year'], out['abstract'],))
         return result, similarity_score
