@@ -61,9 +61,9 @@ new_df['keywords'] = [', '.join(top_n_words[i]) for i in new_df['Topic'].values]
 new_df.to_csv("./data/clusted_df.csv", sep=',', na_rep="NaN")
 
 
-###########################################################
-# STEP 3 : Embeddings modelization and Multi-interactions #
-###########################################################
+#################################################################################
+# STEP 3 : Embeddings modelization(Split-merge) and Scoring(Multi-interactions) #
+#################################################################################
 from models.semantic_legal_searcher import *
 
 # Dataframe with keyword extraction from Parallel clustering-based TM
