@@ -19,7 +19,7 @@ We created a Clean Korean Legal Corpus (CKLC), a new dataset of Korean legal tex
 
 ## 3. KRLawBERT(PLMs)
 
-We can use existing PLMs such as BERT in the SLS framework. However, this way is less competitive in the field of legal information retrieval. Therefore, we release a KoLawBERT pre-trained on CKLC (§2.) by benchmarking the popular two techniques: Masked Language Modeling (MLM) and Transformer-based Sequential Denoising Auto-Encoder (TSDAE).
+We can use existing PLMs such as BERT in the SLS framework. However, this way is less competitive in the field of legal information retrieval. Therefore, we release a KoLawBERT pre-trained on CKLC (§2.) by benchmarking the popular two techniques: Masked Language Modeling (MLM) and Transformer-based Sequential Denoising Auto-Encoder (TSDAE). To adapt the KRLawBERT to produce semantic legal embeddings, it needs a more supervised fine-tuning approach. We fine-tune KRLawBERT on the following three datasets: 1) Natural language inference (NLI) pairs; 2) semantic textual similarity (STS); 3) parallel legal data. Both NLI and STS datasets contain labeled sentence pairs. The parallel legal datasets consist of 1.2 million pairs of semantically similar legal sentences based on CKLC.
 
 ![F_3](https://user-images.githubusercontent.com/105137667/206712633-197592fd-7b54-4157-8cd0-24610d5372b9.jpg)
 
