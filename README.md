@@ -7,13 +7,13 @@
  
  The architecture of ***Semantic Legal Searcher (SLS)*** is a new neural IR approach optimized for legal datasets as shown in Figure 1 (b). Unlike common methods Figure 1 (a), we extend our search model by introducing two information retrieval techniques. First, a ***split-merge*** technique is introduced to contain as much document information as possible in embeddings. In other words, we perform additional embedding modelization that splits each document into sentences and merges encoded sentence-level embeddings to minimize the loss of information in converting the whole document text into embedding. Secondly, a ***multi-interactions technique*** is introduced to improve the quality of semantic similarity measures. ***SLS*** is a search framework that combines semantic search and topic modeling to find relevant documents and simultaneously can extract keywords from each document. Therefore, it is possible to generate keyword embedding in ***SLS***. The ***multi-interactions*** paradigm is that input queries, documents, and keywords are encoded into vectors and then relevance is measured not only by two sets of vectors from queries and documents but also by keyword embeddings.
  
-![F_1](https://user-images.githubusercontent.com/105137667/206842983-1a5438d0-cd1c-4d77-991b-e63cacba4e66.jpg)
+<p align="center">![F_1](https://user-images.githubusercontent.com/105137667/206842983-1a5438d0-cd1c-4d77-991b-e63cacba4e66.jpg)</p>
 
  ### 2. SLS Overall Pipeline
  
  The process of the ***SLS*** is divided into four steps as shown in Figure 2. In the first step, each document in the legal database is encoded into embeddings and then fulfilled embedding modelization called ***split-merge***. In the next step, these embeddings are parallelly clustered quickly, and then keywords are extracted by our topic modeling technique. In the third step, named ***multi-interactions***, both the relevance of the query vector to the legal document embeddings and to the keyword embeddings are estimated by distance metrics. Lastly, the model provides user search results based on their relevance score. 
 
-<img src="https://user-images.githubusercontent.com/105137667/206843022-300ada12-e43e-4af9-b3a1-cd4d08b45cb2.jpg" width="500" height="650"/>
+<p align="center"><img src="https://user-images.githubusercontent.com/105137667/206843022-300ada12-e43e-4af9-b3a1-cd4d08b45cb2.jpg" width="500" height="650"/></p>
 
 ### 3. SLS Usage
 
