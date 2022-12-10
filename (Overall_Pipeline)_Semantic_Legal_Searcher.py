@@ -4,9 +4,9 @@
 #! pip install faiss-gpu
 #! pip install funcy pickle5
 
-###################################
-# STEP 1 : Load DataFrame & PLMs  #
-###################################
+########################################
+# STEP 1 : Load DataFrame & KRLawBERT  #
+########################################
 import pandas as pd
 # 1. Load Legal Dataset(Get Judicial precedent data)
 df = pd.read_csv('./data/law_cases(20221020).csv')
@@ -15,8 +15,8 @@ df = df.dropna(how = 'any')
 # 2. Make index for clustering
 print(">> Law cases data size : ",len(df))
 
-# 3. Load pre-trained & fine-tuned models(KoLawBERT)
-my_plms = './output/tsdae-kolawbert'
+# 3. Load pre-trained & fine-tuned models(KRLawBERT)
+my_plms = './output/tsdae-krlawbert'
 
 #####################################################
 # STEP 2 : Parallel Clustering-based Topic Modeling #
@@ -69,7 +69,7 @@ from models.semantic_legal_searcher import *
 # Dataframe with keyword extraction from Parallel clustering-based TM
 #new_df = pd.read_csv('./data/clusted_df.csv')
 
-# 1. Obtain query, documents, keywords embeddings from PLMs(KoLawBERT models)
+# 1. Obtain query, documents, keywords embeddings from KRLawBERT models
 my_plms = './output/tsdae-kolawbert'
 sls = SLS(
     dataframe = new_df,
