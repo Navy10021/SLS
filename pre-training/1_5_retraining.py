@@ -86,7 +86,7 @@ for epoch in range(epochs):
         iter.set_postfix(loss=loss.item())
 
 # Trained model save
-torch.save(model, 'output/mlm-retrained-bert')
+torch.save(model, 'output/mlm-krlawbert')
 
 
 ########################
@@ -94,10 +94,10 @@ torch.save(model, 'output/mlm-retrained-bert')
 ########################
 #from transformers import TrainingArguments, Trainer
 # 1. Initialize
-#args = TrainingArguments(output_dir='./output/mlm-bert', per_device_train_batch_size = 8, num_train_epochs = 10, seed = 1, logging_steps = 1000, save_steps = 1000, save_total_limit = 3)
+#args = TrainingArguments(output_dir='./output/mlm-krlawbert', per_device_train_batch_size = 8, num_train_epochs = 10, seed = 1, logging_steps = 1000, save_steps = 1000, save_total_limit = 3)
 
 # 2. Train with Trainer
 #trainer = Trainer(model = model, args = args, train_dataset = dataset)
 #trainer.train()
 # Save final model
-#trainer.save_model("./output/mlm-retrained-bert")
+#trainer.save_model("./output/mlm-krlawbert")
