@@ -189,4 +189,4 @@ model.fit(
     show_progress_bar = True
 )
 # Save final model
-model.save('output/tsdae-bert')
+model.save('output/tsdae-krlawbert')
