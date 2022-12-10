@@ -1,7 +1,5 @@
 ![header](https://capsule-render.vercel.app/api?type=wave&color=auto&height=300&section=header&text=Semantic%20Legal%20Searcher&fontSize=70)
 
-[![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=navy10021)](https://github.com/anuraghazra/github-readme-stats)
-
 ## Neural Information Retrieval-based Semantic Search for Case Law
 ### 1. Project Description
 
