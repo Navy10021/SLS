@@ -1,6 +1,6 @@
 ![header](https://capsule-render.vercel.app/api?type=wave&color=auto&height=300&section=header&text=Semantic%20Legal%20Searcher&fontSize=70)
 
-# Semantic Legal Searcher: Neural Information Retrieval-based Semantic Search for Case Law
+# Neural Information Retrieval-based Semantic Search for Case Law
 ## 1. Project Description
 
  In this work, we propose a ***Semantic Legal Searcher (SLS)*** which is a new conceptual search model based on neural information retrieval. ***Semantic Legal Searcher*** can find accurate legal information for users' queries, regardless of whether the user is a lawyer or not. 
