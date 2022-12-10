@@ -89,9 +89,9 @@ all_index = sls.all_distance_metric()
 # 3. Semantic documents search (Question-Answering)
 my_query = "Research about the Transformer network architecture, based solely on attention mechanisms, dispensing with recurrence and convolutions entirely."
 
-original_outputs, _ = sls.semantic_search(
+outputs, _ = sls.semantic_search(
     user_query = my_query,
-    top_k = 7,
+    top_k = 10,
     index = all_index,
     print_results = True,
     )
