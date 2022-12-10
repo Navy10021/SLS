@@ -138,7 +138,7 @@ Now just enter your query and start searching for documents !
 # Semantic documents(arXiv) search
 your_query = "Research about the Transformer network architecture, based solely on attention mechanisms."
 
-original_outputs, _ = sls.semantic_search(
+outputs, _ = sls.semantic_search(
     user_query = your_query,
     top_k = 10,
     index = all_index,
