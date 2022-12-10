@@ -95,7 +95,7 @@ restricted_index = sls.restricted_distance_metric(nlist = 200, nprobe = 6)
 # 3. Semantic case law search (Legal Question-Answering)
 my_query = "마약 불법거래 및 운반에 관한 판례"
 
-original_outputs, _ = sls.semantic_search(
+outputs, _ = sls.semantic_search(
     user_query = my_query,
     top_k = 5,
     index = all_index,
