@@ -60,7 +60,7 @@ tokenizer.train(
 # Enable truncation up to the maximum "512 tokens"
 tokenizer.enable_truncation(max_length = max_length)
 
-model_path = "KoLawRoBERTa"
+model_path = "dynamic-mlm"
 # Make the directory if not already there
 if not os.path.isdir(model_path):
   os.mkdir(model_path)
@@ -68,7 +68,7 @@ if not os.path.isdir(model_path):
 # Save the tokenizer in model_path
 tokenizer.save_model(model_path)
 
-model_path = "KoLawRoBERTa"
+model_path = "dynamic-mlm"
 tokenizer = RobertaTokenizerFast.from_pretrained(model_path, max_len=max_length)
 
 
