@@ -33,7 +33,7 @@ Or you can use a language model called ***KRLawBERT*** pre-trained in Korean lan
 
 ```python
 import pandas as pd
-# Load Legal Dataset(Korea Judicial precedent data)
+# Load Korean Legal Dataset(Korean Judicial precedent data)
 df = pd.read_csv('./data/law_cases(20221020).csv')
 
 # Load pre-trained & fine-tuned models(KRLawBERT)
@@ -44,6 +44,19 @@ my_plms = './output/tsdae-krlawbert'
 
 Topic modeling is an unsupervised method to extract latent keywords and uncover latent themes within documents. Clustering-based topic modeling is an advanced technique using various clustering frameworks with embeddings for topic modeling. We create a ***parallel clustering-based topic modeling*** technique focused on speed.
 
+1. Parallel Clustering 
+ - dataframe : Dataframe based table
+ - tgt_col : Documents columns (str)
+ - model_name : PLMs (str)
+ - use_sentence_bert : Whether to generate sentence embeddings or not (bool)
+ - threshold : threshold (float)
+ - page_size : Number of initial centroids (int)
+ - iterations : Max iterations (int)
+
+2. Keywords Extraction
+ - dataframe : DataFrame including clustered documents
+ - n : Number of keywords to extract (int)
+ - en : Whether documents is English or not (bool)
 ```python
 from models.parallel_clustering_TM import *
 
@@ -88,7 +101,7 @@ We find that both the embedding modelization(***split-merge***) and scoring meth
  - dataframe : Dataframe based table
  - doc_col : Documents columns (str)
  - key_col : Keywords columns (str)
- - model_name : PLMs
+ - model_name : PLMs name (str)
  - use_sentence_bert : Whether to generate sentence embeddings or not (bool)
  - split_and_merge : Whether to use ***split-merge*** embeddings modelization technique (bool)
  - multi_inter : Whether to use ***multi-interactions*** scoring technique (bool)
@@ -115,9 +128,9 @@ all_index = sls.all_distance_metric()
 ### STEP 4 : Semantic Search
 
 Now just enter your query and start searching for documents !
- - user_query : your input query (str)
+ - user_query : Your input query (str)
  - top_k : Number of documents related to your query (int)
- - index : index (variable)
+ - index : Index (variable)
  - print_results : Whether to print search results or not (bool)
 
 ```python
