@@ -36,7 +36,7 @@ data_collator = DataCollatorForLanguageModeling(
 ##############
 # Setting for Train
 args = TrainingArguments(
-    output_dir = "./output/mlm-roberta",
+    output_dir = "./output/dynamic-mlm-krlawbert",
     overwrite_output_dir = True,
     per_device_train_batch_size = 8,
     num_train_epochs = 12,
@@ -56,4 +56,4 @@ trainer = Trainer(model = model,
 trainer.train()
 
 # Save final model
-trainer.save_model("./output/mlm-retrained-roberta")
+trainer.save_model("./output/dynamic-mlm-krlawbert")
