@@ -15,15 +15,15 @@ device = "cuda" if torch.cuda.is_available() else "cpu"
 print(">> Using {}".format(device))
 
 ################################
-### 1. Load PLMs (KoLawBERT) ###
+### 1. Load PLMs (KRLawBERT) ###
 ################################
 from models.kor_sentence_bert import *
 # 1-1. Load pre-trained or re-trained KoLawBERT
-model_name = "output/mlm-retrained-bert"
+model_name = "output/mlm-krlawbert"
 token_name = "klue/bert-base"
 model = make_sentenceBERT(model_name, token_name)
 
-# 1-2. If load re-trained KoLawBERT / TSDAE / Huggingface PLMs
+# 1-2. If load re-trained KRLawBERT / TSDAE / Huggingface PLMs
 #model_name = "klue/bert-base"
 #model = SentenceTransformer(model_name)
 
@@ -72,9 +72,7 @@ num_epochs = 3
 warmup_steps = math.ceil(len(train_dataset) * num_epochs / train_batch_size * 0.1)   
 logging.info("Warmup-steps: {}".format(warmup_steps))
 
-model_save_path = 'output/nil_task_bert'
-#model_save_path = 'output/nil_task_roberta'
-#model_save_path = 'output/nil_task_albert'
+model_save_path = 'output/nil_krlawbert'
 
 model.fit(train_objectives=[(train_dataloader, train_loss)],
           evaluator=dev_evaluator,
@@ -93,8 +91,8 @@ print(">> Best TEST Score is : {:.4f}".format(test_evaluator(model, output_path=
 ########################################
 ### 3. Fine-Tuning on KorSTS Dataset ###
 ########################################
-model_name = 'output/nil_task_bert'
-model_save_path = 'output/nil_sts_bert'
+model_name = 'output/nil_krlawbert'
+model_save_path = 'output/mlm_krlawbert'
 model = SentenceTransformer(model_name)
 
 # 3-1. Make STS Dataset for Training
