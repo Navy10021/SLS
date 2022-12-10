@@ -1,7 +1,7 @@
 ![header](https://capsule-render.vercel.app/api?type=wave&color=auto&height=300&section=header&text=Semantic%20Legal%20Searcher&fontSize=70)
 
 ## Neural Information Retrieval-based Semantic Search for Case Law
-### 1. Project Description
+### 1. Model Description
 
  In this work, we propose a ***Semantic Legal Searcher (SLS)*** which is a new conceptual search model based on neural information retrieval. ***Semantic Legal Searcher*** can find accurate legal information for users' queries, regardless of whether the user is a lawyer or not. 
  
@@ -9,13 +9,13 @@
  
 ![F_1](https://user-images.githubusercontent.com/105137667/206842983-1a5438d0-cd1c-4d77-991b-e63cacba4e66.jpg)
 
- ### 2. SLS Overall Pipeline
+ ### 2. Model Overall Pipeline
  
  The process of the ***SLS*** is divided into four steps as shown in Figure 2. In the first step, each document in the database is encoded into embeddings and then fulfilled embedding modelization called ***split-merge***. In the next step, these embeddings are parallelly clustered quickly with a parallel clustering algorithm, and then keywords are extracted by our topic modeling technique. In the third step, named ***multi-interactions***, both the relevance of the query vector to the legal document embeddings and to the keyword embeddings are estimated by distance metrics(e.i. cosine or Euclidean). Lastly, the model provides user search results based on their relevance score. 
 
 <p align="center"><img src="https://user-images.githubusercontent.com/105137667/206843022-300ada12-e43e-4af9-b3a1-cd4d08b45cb2.jpg" width="500" height="600"/></p>
 
-### 3. SLS Usage
+### 3. Model Usage
 
 #### STEP 1 : Load pre-trained language models (PLMs)
  
