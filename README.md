@@ -1,7 +1,7 @@
 ![header](https://capsule-render.vercel.app/api?type=wave&color=auto&height=300&section=header&text=Semantic%20Legal%20Searcher&fontSize=70)
 
-# Neural Information Retrieval-based Semantic Search for Case Law
-## 1. Project Description
+## Neural Information Retrieval-based Semantic Search for Case Law
+### 1. Project Description
 
  In this work, we propose a ***Semantic Legal Searcher (SLS)*** which is a new conceptual search model based on neural information retrieval. ***Semantic Legal Searcher*** can find accurate legal information for users' queries, regardless of whether the user is a lawyer or not. 
  
@@ -9,15 +9,15 @@
  
 ![image](https://user-images.githubusercontent.com/105137667/206459415-f5dab41f-1185-430e-8279-4c9703b76be5.png)
 
- ## 2. SLS Overall Pipeline
+ ### 2. SLS Overall Pipeline
  
  The process of the ***SLS*** is divided into four steps as shown in Figure 2. In the first step, each document in the legal database is encoded into embeddings and then fulfilled embedding modelization called ***split-merge***. In the next step, these embeddings are parallelly clustered quickly, and then keywords are extracted by our topic modeling technique. In the third step, named ***multi-interactions***, both the relevance of the query vector to the legal document embeddings and to the keyword embeddings are estimated by distance metrics. Lastly, the model provides user search results based on their relevance score. 
 
 ![F_2](https://user-images.githubusercontent.com/105137667/206712288-5bc8e3cb-64d1-4577-a61b-01b8dcec7df6.jpg)
 
-## 3. SLS Usage
+### 3. SLS Usage
 
-### STEP 1 : Load pre-trained language models (PLMs)
+#### STEP 1 : Load pre-trained language models (PLMs)
  
 You can use existing PLMs such as BERT or Sentence-BERT in the ***SLS*** framework. 
 
@@ -41,7 +41,7 @@ df = pd.read_csv('./data/law_cases(20221020).csv')
 my_plms = './output/tsdae-krlawbert'
 ```
 
-### STEP 2 : Keywords extraction with Parallel Clustering-based Topic Modeling
+#### STEP 2 : Keywords extraction with Parallel Clustering-based Topic Modeling
 
 Topic modeling is an unsupervised method to extract latent keywords and uncover latent themes within documents. Clustering-based topic modeling is an advanced technique using various clustering frameworks with embeddings for topic modeling. We create a ***parallel clustering-based topic modeling*** technique focused on speed.
 
@@ -96,7 +96,7 @@ top_n_words = cluster.extract_top_n_words_per_topic(
 new_df['keywords'] = [', '.join(top_n_words[i]) for i in new_df['Topic'].values]
 ```
 
-### STEP 3 : Embedding Modelization & Scoring
+#### STEP 3 : Embedding Modelization & Scoring
 
 We find that both the embedding modelization(***split-merge***) and scoring method(***the multi-interactions mechanisms***) help improve semantic search accuracy by 14 – 20%. It demonstrates that they are suitable approach in neural information retrieval.
  - dataframe : Dataframe based table
@@ -126,7 +126,7 @@ all_index = sls.all_distance_metric()
 #restricted_index = sls.restricted_distance_metric(nlist = 200, nprobe = 6)
 ```
 
-### STEP 4 : Semantic Search
+#### STEP 4 : Semantic Search
 
 Now just enter your query and start searching for documents !
  - user_query : Your input query (str)
