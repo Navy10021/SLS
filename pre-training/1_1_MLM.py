@@ -60,7 +60,7 @@ tokenizer.train(
 # Enable truncation up to the maximum "512 tokens"
 tokenizer.enable_truncation(max_length = max_length)
 
-model_path = "KRLawBERT"
+model_path = "mlm-krlawbert"
 # Make the directory if not already there
 if not os.path.isdir(model_path):
   os.mkdir(model_path)
@@ -83,7 +83,7 @@ with open(os.path.join(model_path, "config.json"), "w") as f:
   json.dump(tokenizer_cfg, f)
 
 # When the tokenizer is trained and configured, load it as BertTokenizerFast
-model_path ="KRLawBERT"
+model_path ="mlm-krlawbert"
 tokenizer = BertTokenizerFast.from_pretrained(model_path)
 
 
