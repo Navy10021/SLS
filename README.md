@@ -58,6 +58,9 @@ Topic modeling is an unsupervised method to extract latent keywords and uncover 
  - dataframe : DataFrame including clustered documents
  - n : Number of keywords to extract (int)
  - en : Whether documents is English or not (bool)
+ 
+Following steps are code of Parallel Clustering-based TM:
+
 ```python
 from models.parallel_clustering_TM import *
 
@@ -107,6 +110,8 @@ We find that both the embedding modelization(***split-merge***) and scoring meth
  - split_and_merge : Whether to use ***split-merge*** embeddings modelization technique (bool)
  - multi_inter : Whether to use ***multi-interactions*** scoring technique (bool)
 
+Following steps are code of SLS mechanism:
+
 ```python
 # Load SLS framework
 sls = SLS(
@@ -133,6 +138,8 @@ Now just enter your query and start searching for documents !
  - top_k : Number of documents related to your query (int)
  - index : Index (variable)
  - print_results : Whether to print search results or not (bool)
+
+Following steps are code of semantic search:
 
 ```python
 # Semantic documents(arXiv) search
