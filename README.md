@@ -21,6 +21,7 @@
  
 You can use existing PLMs such as BERT or Sentence-BERT in the ***SLS*** framework. 
 
+Python code.
 ```python
 import pandas as pd
 # Load dataset(Cornell University., 2022)
@@ -32,6 +33,7 @@ my_plms = "all-mpnet-base-v2"
 
 Or you can use a language model called ***KRLawBERT*** pre-trained in Korean languages with a large scaled legal corpus.	We release a language model named KRLawBERT that pre-trained Transformer-based models to generate high-quality embeddings and better understand texts in legal domains.
 
+Python code.
 ```python
 import pandas as pd
 # Load Korean Legal Dataset(Korean Judicial precedent data)
@@ -59,8 +61,7 @@ Topic modeling is an unsupervised method to extract latent keywords and uncover 
  - n : Number of keywords to extract (int)
  - en : Whether documents is English or not (bool)
  
-Following steps are code of Parallel Clustering-based TM:
-
+Python code.
 ```python
 from models.parallel_clustering_TM import *
 
@@ -99,7 +100,7 @@ top_n_words = cluster.extract_top_n_words_per_topic(
 new_df['keywords'] = [', '.join(top_n_words[i]) for i in new_df['Topic'].values]
 ```
 
-#### STEP 3 : Embedding Modelization & Indexing
+#### STEP 3 : Embedding Modelization, Scoring, and Indexing
 
 We find that both the embedding modelization(***split-merge***) and scoring method(***the multi-interactions mechanisms***) help improve semantic search accuracy by 14 – 20%. It demonstrates that they are suitable approach in neural information retrieval.
  - dataframe : Dataframe based table
@@ -110,8 +111,7 @@ We find that both the embedding modelization(***split-merge***) and scoring meth
  - split_and_merge : Whether to use ***split-merge*** embeddings modelization technique (bool)
  - multi_inter : Whether to use ***multi-interactions*** scoring technique (bool)
 
-Following steps are code of SLS embedding modelizationm, indexing mechanism:
-
+Python code.
 ```python
 # Load SLS framework
 sls = SLS(
@@ -139,8 +139,7 @@ Now just enter your query and start searching for documents !
  - index : Index (variable)
  - print_results : Whether to print search results or not (bool)
 
-Following steps are code of semantic search:
-
+Python code.
 ```python
 # Semantic documents(arXiv) search
 your_query = "Research about the Transformer network architecture, based solely on attention mechanisms."
