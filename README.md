@@ -11,7 +11,7 @@
 
  ### 2. Model Overall Pipeline
  
- The process of the ***SLS*** is divided into four steps as shown in Figure 2. In the first step, each document in the database is encoded into embeddings and then fulfilled embedding modelization called ***split-merge***. In the next step, these embeddings are parallelly clustered quickly with a parallel clustering algorithm, and then keywords are extracted by our topic modeling technique. In the third step, named ***multi-interactions***, both the relevance of the query vector to the legal document embeddings and to the keyword embeddings are estimated by distance metrics(e.i. cosine or Euclidean). Lastly, the model provides user search results based on their relevance score. 
+ The process of the ***SLS*** is divided into four steps as shown in Figure 2. In the first step, each document in the database is encoded into embeddings and then fulfilled embedding modelization called ***split-merge***. In the next step, these embeddings are parallelly clustered quickly with a **parallel clustering algorithm**, and then keywords are extracted by **our topic modeling technique**. In the third step, named ***multi-interactions***, both the relevance of the query vector to the legal document embeddings and to the keyword embeddings are estimated by distance metrics(e.i. cosine or Euclidean). Lastly, the model provides user search results based on their relevance score. 
 
 <p align="center"><img src="https://user-images.githubusercontent.com/105137667/206843022-300ada12-e43e-4af9-b3a1-cd4d08b45cb2.jpg" width="500" height="600"/></p>
 
