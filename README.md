@@ -99,7 +99,7 @@ top_n_words = cluster.extract_top_n_words_per_topic(
 new_df['keywords'] = [', '.join(top_n_words[i]) for i in new_df['Topic'].values]
 ```
 
-#### STEP 3 : Embedding Modelization & Scoring
+#### STEP 3 : Embedding Modelization & Indexing
 
 We find that both the embedding modelization(***split-merge***) and scoring method(***the multi-interactions mechanisms***) help improve semantic search accuracy by 14 – 20%. It demonstrates that they are suitable approach in neural information retrieval.
  - dataframe : Dataframe based table
@@ -110,7 +110,7 @@ We find that both the embedding modelization(***split-merge***) and scoring meth
  - split_and_merge : Whether to use ***split-merge*** embeddings modelization technique (bool)
  - multi_inter : Whether to use ***multi-interactions*** scoring technique (bool)
 
-Following steps are code of SLS mechanism:
+Following steps are code of SLS embedding modelizationm, indexing mechanism:
 
 ```python
 # Load SLS framework
