@@ -21,7 +21,7 @@
  
 You can use existing PLMs such as BERT or Sentence-BERT in the ***SLS*** framework. 
 
-Python code.
+
 ```python
 import pandas as pd
 # Load dataset(Cornell University., 2022)
@@ -33,13 +33,13 @@ my_plms = "all-mpnet-base-v2"
 
 Or you can use a language model called ***KRLawBERT*** pre-trained in Korean languages with a large scaled legal corpus.	We release a language model named KRLawBERT that pre-trained Transformer-based models to generate high-quality embeddings and better understand texts in legal domains.
 
-Python code.
+
 ```python
 import pandas as pd
 # Load Korean Legal Dataset(Korean Judicial precedent data)
 df = pd.read_csv('./data/law_cases(20221020).csv')
 
-# Load pre-trained & fine-tuned models(KRLawBERT)
+# Load pre-trained & fine-tuned models (KRLawBERT)
 my_plms = './output/tsdae-krlawbert'
 ```
 
@@ -47,7 +47,7 @@ my_plms = './output/tsdae-krlawbert'
 
 Topic modeling is an unsupervised method to extract latent keywords and uncover latent themes within documents. Clustering-based topic modeling is an advanced technique using various clustering frameworks with embeddings for topic modeling. We create a ***parallel clustering-based topic modeling*** technique focused on speed.
 
-1. Parallel Clustering 
+**1. Parallel Clustering class**
  - dataframe : Dataframe based table
  - tgt_col : Documents columns (str)
  - model_name : PLMs (str)
@@ -56,15 +56,14 @@ Topic modeling is an unsupervised method to extract latent keywords and uncover 
  - page_size : Number of initial centroids (int)
  - iterations : Max iterations (int)
 
-2. Keywords Extraction
+**2. Keywords Extraction class**
  - dataframe : DataFrame including clustered documents
  - n : Number of keywords to extract (int)
  - en : Whether documents is English or not (bool)
  
-Python code.
+
 ```python
 from models.parallel_clustering_TM import *
-
 # Obtain Embeddings
 target_text = 'abstract'
 
@@ -103,6 +102,8 @@ new_df['keywords'] = [', '.join(top_n_words[i]) for i in new_df['Topic'].values]
 #### STEP 3 : Embedding Modelization, Scoring, and Indexing
 
 We find that both the embedding modelization(***split-merge***) and scoring method(***the multi-interactions mechanisms***) help improve semantic search accuracy by 14 – 20%. It demonstrates that they are suitable approach in neural information retrieval.
+
+**SLS class**
  - dataframe : Dataframe based table
  - doc_col : Documents columns (str)
  - key_col : Keywords columns (str)
@@ -111,8 +112,13 @@ We find that both the embedding modelization(***split-merge***) and scoring meth
  - split_and_merge : Whether to use ***split-merge*** embeddings modelization technique (bool)
  - multi_inter : Whether to use ***multi-interactions*** scoring technique (bool)
 
-Python code.
+
 ```python
+# If you use the English dataset, import this
+from models.semantic_searcher_eng import *
+# If you use the Korean case law dataset, import this
+from models.semantic_legal_searcher import *
+
 # Load SLS framework
 sls = SLS(
     dataframe = new_df,
@@ -134,12 +140,14 @@ all_index = sls.all_distance_metric()
 #### STEP 4 : Semantic Search
 
 Now just enter your query and start searching for documents !
+
+**semantic search function**
  - user_query : Your input query (str)
  - top_k : Number of documents related to your query (int)
  - index : Index (variable)
  - print_results : Whether to print search results or not (bool)
 
-Python code.
+
 ```python
 # Semantic documents(arXiv) search
 your_query = "Research about the Transformer network architecture, based solely on attention mechanisms."
