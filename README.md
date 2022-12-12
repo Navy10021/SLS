@@ -65,6 +65,7 @@ Topic modeling is an unsupervised method to extract latent keywords and uncover 
  
 
 ```python
+# import parallel_clustering-based topic modeling model
 from models.parallel_clustering_TM import *
 
 # Obtain Embeddings
@@ -116,9 +117,9 @@ We find that both the embedding modelization(***split-merge***) and scoring meth
 
 
 ```python
-# If you use the English dataset, import this
+# If you use the English dataset, import this semantic searcher model
 from models.semantic_searcher_eng import *
-# If you use the Korean case law dataset, import this
+# If you use the Korean case law dataset, import this semantic searcher model
 from models.semantic_legal_searcher import *
 
 # Load SLS framework
