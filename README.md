@@ -66,9 +66,9 @@ Topic modeling is an unsupervised method to extract latent keywords and uncover 
 
 ```python
 from models.parallel_clustering_TM import *
+
 # Obtain Embeddings
 target_text = 'abstract'
-
 cluster = ParallelCluster(
     dataframe = df,
     tgt_col = target_text,
