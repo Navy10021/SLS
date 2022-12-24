@@ -111,7 +111,7 @@ We find that both the embedding modelization(***split-merge***) and scoring meth
  - doc_col : Documents columns (str)
  - key_col : Keywords columns (str)
  - model_name : PLMs name (str)
- - use_sentence_bert : Whether to generate sentence embeddings or not (bool)
+ - use_sentence_bert : Whether to ***generate sentence embeddings*** or not (bool)
  - split_and_merge : Whether to use ***split-merge*** embeddings modelization technique (bool)
  - multi_inter : Whether to use ***multi-interactions*** scoring technique (bool)
 
