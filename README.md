@@ -162,3 +162,6 @@ outputs, _ = sls.semantic_search(
     print_results = True,
     )
 ```
+
+### 4. Research Paper
+ - Currently, the thesis is under review. It will be revealed in the future.
