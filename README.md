@@ -1,4 +1,4 @@
-![header](https://capsule-render.vercel.app/api?type=soft&color=auto&height=300&section=header&text=Semantic%20Legal%20Searcher&fontSize=70)
+![header](https://capsule-render.vercel.app/api?type=waving&color=auto&height=300&section=header&text=Semantic%20Legal%20Searcher&fontSize=70)
 
 ## Neural Information Retrieval-based Semantic Search for Case Law
 <img src="https://img.shields.io/badge/Semantic Search-3776AB?style=flat-square&logo=Source Engine&logoColor=white"/> <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=Python&logoColor=white"/> <img src="https://img.shields.io/badge/Colab-3776AB?style=flat-square&logo=Google Colab&logoColor=white"/> 
