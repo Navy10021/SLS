@@ -105,7 +105,7 @@ new_df['keywords'] = [', '.join(top_n_words[i]) for i in new_df['Topic'].values]
 
 #### STEP 3 : Embedding Modelization, Scoring, and Indexing
 
-We find that both the embedding modelization (**split-merge**) and scoring method (**the multi-interactions mechanisms**) help improve semantic search accuracy by 14 – 20%. It demonstrates that they are suitable approach in neural information retrieval.
+We find that both the embedding modelization (named ***split-merge***) and scoring method (named ***the multi-interactions mechanisms***) help improve semantic search accuracy by 14 – 20%. It demonstrates that they are suitable approach in neural information retrieval.
 
 **SLS class**
  - dataframe : Dataframe based table
