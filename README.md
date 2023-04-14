@@ -27,7 +27,6 @@
  
 You can use existing PLMs such as BERT or Sentence-BERT in the ***SLS*** framework. 
 
-
 ```python
 import pandas as pd
 # Load dataset(Cornell University., 2022)
@@ -37,8 +36,7 @@ df = pd.read_csv('./data/arxiv_meta.csv')
 my_plms = "all-mpnet-base-v2"
 ```
 
-Or you can use a language model called ***KRLawBERT*** pre-trained in Korean languages with a large scaled legal corpus.	We release a language model named KRLawBERT that pre-trained Transformer-based models to generate high-quality embeddings and better understand texts in legal domains.
-
+Or you can use a language model called ***KRLawBERT*** pre-trained in Korean languages with a large scaled legal corpus. ***KRLawBERT*** is a pre-trained Transformer's encoder-based model to generate high-quality embeddings and better understand texts in legal domains.
 
 ```python
 import pandas as pd
@@ -67,7 +65,6 @@ Topic modeling is an unsupervised method to extract latent keywords and uncover 
  - n : Number of keywords to extract (int)
  - en : Whether documents is English or not (bool)
  
-
 ```python
 # Import parallel_clustering-based topic modeling model
 from models.parallel_clustering_TM import *
@@ -119,7 +116,6 @@ We find that both the embedding modelization(***split-merge***) and scoring meth
  - split_and_merge : Whether to use ***split-merge*** embeddings modelization technique (bool)
  - multi_inter : Whether to use ***multi-interactions*** scoring technique (bool)
 
-
 ```python
 # If you use the English dataset, import this semantic searcher model
 from models.semantic_searcher_eng import *
@@ -153,7 +149,6 @@ Now just enter your query and start searching for documents !
  - top_k : Number of documents related to your query (int)
  - index : Index (variable)
  - print_results : Whether to print search results or not (bool)
-
 
 ```python
 # Semantic documents(arXiv) search
