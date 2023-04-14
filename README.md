@@ -5,14 +5,14 @@
 
 ### 1. Model Description
 
-#### Semantic Legal Searcher
+### Semantic Legal Searcher
  In this work, we propose a ***Semantic Legal Searcher (SLS)*** which is a new conceptual search model based on neural information retrieval. ***Semantic Legal Searcher*** can find accurate legal information for users' queries, regardless of whether the user is a lawyer or not. 
  
  The architecture of ***Semantic Legal Searcher (SLS)*** is a new neural IR approach optimized for legal datasets as shown in Figure 1 (b). Unlike common methods Figure 1 (a), we extend our search model by introducing two information retrieval techniques. First, a ***split-merge technique*** is introduced to contain as much document information as possible in embeddings. In other words, we perform additional embedding modelization that splits each document into sentences and merges encoded sentence-level embeddings to minimize the loss of information in converting the whole document text into embedding. Secondly, a ***multi-interactions technique*** is introduced to improve the quality of semantic similarity measures. ***SLS*** is a search framework that combines semantic search and topic modeling to find relevant documents and simultaneously can extract keywords from each document. Therefore, it is possible to generate keyword embedding in ***SLS***. The ***multi-interactions*** paradigm is that input queries, documents, and keywords are encoded into vectors and then relevance is measured not only by two sets of vectors from queries and documents but also by keyword embeddings.
  
 ![F_1](https://user-images.githubusercontent.com/105137667/206842983-1a5438d0-cd1c-4d77-991b-e63cacba4e66.jpg)
 
-#### KRLawBERT
+### KRLawBERT
  **BERT (Bidirectional Encoder Representations from Transformers)** is a pre-trained large language model based on the Transformers encoder. We can use existing various BERT-based large language models in the ***SLS***. However, this way is less competitive in the field of legal information retrieval. Therefore, we release a ***KRLawBERT*** pre-trained on large-scale legal text dataset by benchmarking two popular techniques: Masked Language Modeling (MLM) and Transformer-based Sequential Denoising Auto-Encoder (TSDAE).
 
  ### 2. Model Overall Pipeline
