@@ -12,8 +12,12 @@
  
 ![F_1](https://user-images.githubusercontent.com/105137667/206842983-1a5438d0-cd1c-4d77-991b-e63cacba4e66.jpg)
 
-### KRLawBERT
+### KRLawBERT and KRLawGPT
  **BERT (Bidirectional Encoder Representations from Transformers)** is a pre-trained large language model based on the Transformers encoder. We can use existing various BERT-based large language models in the ***SLS***. However, this way is less competitive in the field of legal information retrieval. Therefore, we release a ***KRLawBERT*** pre-trained on large-scale legal text dataset by benchmarking two popular techniques: Masked Language Modeling (MLM) and Transformer-based Sequential Denoising Auto-Encoder (TSDAE).
+https://github.com/Navy10021/KRLawBERT
+
+We also have developed a GPT(Generative Pre-trained Transformer) called **KRLawGPT** specializes in Korean legal texts. This language model uses a decoder-only transformer to generate expressive Korean legal text. KRLawGPT processes input text to perform both natural language generation and natural language processing to understand and generate legal text.
+https://github.com/Navy10021/KRLawGPT
 
  ### 2. Model Overall Pipeline
  
