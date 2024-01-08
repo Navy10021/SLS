@@ -3,36 +3,36 @@
 # LLMs-Based Legal Info Retrieval : A Neural Semantic Search Framework with Multi-Interaction Tech and KRLawBERT/GPT
 <img src="https://img.shields.io/badge/Semantic Search-3776AB?style=flat-square&logo=Source Engine&logoColor=white"/> <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=Python&logoColor=white"/> <img src="https://img.shields.io/badge/Colab-3776AB?style=flat-square&logo=Google Colab&logoColor=white"/> 
 
+### 0. Abstract
+ In this work, we introduce a pioneering Neural Semantic Search Framework designed for legal information retrieval, known as ***Semantic Legal Searcher (SLS)***. The framework utilizes state-of-the-art neural information retrieval techniques to deliver precise legal information responses for user queries, irrespective of their legal background. This work encompasses a distinctive architecture, incorporating the ***split-merge technique*** for enhanced document embeddings and a ***multi-interactions*** paradigm to elevate semantic similarity measures. Additionally, the ***SLS*** framework integrates two pre-trained Legal Language Models(LLMs), ***KRLawBERT and KRLawGPT, ***specifically tailored for legal texts, surpassing the capabilities of conventional NLP models like BERT.
+
 ### 1. Model Description
 
-### Semantic Legal Searcher
- In this work, we propose a ***Semantic Legal Searcher (SLS)*** which is a new conceptual search model based on neural information retrieval. ***SLS*** leverages advanced neural information retrieval techniques to provide accurate legal information for user queries, regardless of their legal expertise. The framework incorporates a novel architecture optimized for legal datasets, employing a ***split-merge technique*** to enhance document embeddings and ***a multi-interactions*** paradigm to improve semantic similarity measures. Additionally, it integrates two pre-trained LLMs, ***KRLawBERT*** and ***KRLawGPT***, specifically designed for legal texts, surpassing the capabilities of traditional NLP models such as BERT.
- 
- The architecture of ***Semantic Legal Searcher (SLS)*** is a new neural IR approach optimized for legal datasets as shown in Figure 1 (b). Unlike common methods Figure 1 (a), we extend our search model by introducing two information retrieval techniques. First, a ***split-merge technique*** is introduced to contain as much document information as possible in embeddings. In other words, we perform additional embedding modelization that splits each document into sentences and merges encoded sentence-level embeddings to minimize the loss of information in converting the whole document text into embedding. Secondly, a ***multi-interactions technique*** is introduced to improve the quality of semantic similarity measures. ***SLS*** is a search framework that combines semantic search and topic modeling to find relevant documents and simultaneously can extract keywords from each document. Therefore, it is possible to generate keyword embedding in ***SLS***. The ***multi-interactions*** paradigm is that input queries, documents, and keywords are encoded into vectors and then relevance is measured not only by two sets of vectors from queries and documents but also by keyword embeddings.
+### 1.1 Semantic Legal Searcher(SLS)
+The ***SLS*** is presented as a groundbreaking conceptual search model based on neural information retrieval, aiming to revolutionize legal information accessibility. Unlike common methods in Figure 1 (a), we extend our search model by introducing two information retrieval techniques shown in (b). The ***SLS*** employs an optimized neural Information Retrieval (IR) approach for legal datasets, incorporating the ***split-merge technique*** to maximize information retention in document embeddings. The ***multi-interactions technique*** enhances semantic similarity measures, establishing ***SLS*** as a comprehensive search framework that combines semantic search and topic modeling for relevance identification and keyword extraction.
  
 ![F_1](https://user-images.githubusercontent.com/105137667/206842983-1a5438d0-cd1c-4d77-991b-e63cacba4e66.jpg)
 
-### KRLawBERT and KRLawGPT
-**BERT** and **GPT** are both NLP models capable of understanding the semantic meaning of text and have been applied to a variety of tasks including text classification, entity recognition, and more. 
+### 1.2. KRLawBERT and KRLawGPT
+**BERT(Bidirectional Encoder Representations from Transformers)** and **GPT(Generative Pre-trained Transformer)** are both NLP models capable of understanding the semantic meaning of the text and have been applied to a variety of tasks including text classification, entity recognition, and more. 
 
- **BERT (Bidirectional Encoder Representations from Transformers)** is a pre-trained large language model based on the Transformers encoder. We can use existing various BERT-based large language models in the ***SLS***. However, this way is less competitive in the field of legal information retrieval. Therefore, we release a ***KRLawBERT*** pre-trained on large-scale legal text dataset by benchmarking two popular techniques: Masked Language Modeling (MLM) and Transformer-based Sequential Denoising Auto-Encoder (TSDAE). According to our experiments, ***KRLawBERT*** demonstrates superior performance in capturing sentence text similarity based on the metrics. It is evident that ***KRLawBERT*** consistently outperformed the other models regarding semantic search accuracy. 
+***KRLawBERT***, developed through benchmarking Masked Language Modeling (MLM) and Transformer-based Sequential Denoising Auto-Encoder (TSDAE), outperforms conventional BERT-based models in capturing sentence text similarity for legal information retrieval. 
  ☞ https://github.com/Navy10021/KRLawBERT
 
-We also have developed a **GPT(Generative Pre-trained Transformer)** called ***KRLawGPT*** specializes in Korean legal texts. This language model uses a decoder-only transformer to generate expressive Korean legal text. KRLawGPT processes input text to perform both natural language generation and natural language processing to understand and generate legal text.
+Additionally, ***KRLawGPT***, a decoder-only transformer, is introduced for generating expressive Korean legal text, broadening the language model capabilities.
  ☞ https://github.com/Navy10021/KRLawGPT
 
- ### 2. Model Overall Pipeline
+ ### 2. Model Overall Pipeline(SLS Process)
  
- The process of the ***SLS*** is divided into four steps as shown in Figure 2. In the first step, each document in the database is encoded into embeddings and then fulfilled embedding modelization called ***split-merge***. In the next step, these embeddings are parallelly clustered quickly with a **parallel clustering algorithm**, and then keywords are extracted by **our topic modeling technique**. In the third step, named ***multi-interactions***, both the relevance of the query vector to the legal document embeddings and to the keyword embeddings are estimated by distance metrics(e.i. cosine or Euclidean). Lastly, the model provides user search results based on their relevance score. 
+ The process of the ***SLS*** is divided into four steps as shown in Figure 2 : document encoding and split-merge modelization, parallel clustering-based topic modeling for keyword extraction, multi-interactions for relevance estimation, and the provision of user search results based on relevance scores. Each step is intricately designed to optimize the efficiency and effectiveness of legal information retrieval.
 
 <p align="center"><img src="https://user-images.githubusercontent.com/105137667/206843022-300ada12-e43e-4af9-b3a1-cd4d08b45cb2.jpg" width="500" height="600"/></p>
 
 ### 3. Model Usage
 
-#### STEP 1 : Load pre-trained language models (PLMs)
+#### STEP 1 : Load Pre-trained Legal Language Models (LLMs)
  
-You can use existing PLMs such as BERT or Sentence-BERT in the ***SLS*** framework. 
-
+Users have the flexibility to utilize existing models such as **BERT** or opt for the specialized ***KRLawBERT***, pre-trained on a large-scale legal text dataset, enhancing performance for legal information retrieval.
 ```python
 import pandas as pd
 # Load dataset(Cornell University., 2022)
@@ -42,7 +42,7 @@ df = pd.read_csv('./data/arxiv_meta.csv')
 my_plms = "all-mpnet-base-v2"
 ```
 
-Or you can use a language model called ***KRLawBERT*** pre-trained in Korean languages with a large scaled legal corpus. ***KRLawBERT*** is a pre-trained Transformer's encoder-based model to generate high-quality embeddings and better understand texts in legal domains.
+***KRLawBERT*** is a pre-trained Transformer's encoder-based model to generate high-quality embeddings and better understand texts in legal domains.
 
 ```python
 import pandas as pd
@@ -53,9 +53,9 @@ df = pd.read_csv('./data/law_cases(20221020).csv')
 my_plms = './output/tsdae-krlawbert'
 ```
 
-#### STEP 2 : Keywords extraction with Parallel Clustering-based Topic Modeling
+#### STEP 2 : Keywords Extraction with Parallel Clustering-based Topic Modeling
 
-Topic modeling is an unsupervised method to extract latent keywords and uncover latent themes within documents. Clustering-based topic modeling is an advanced technique using various clustering frameworks with embeddings for topic modeling. We create a ***parallel clustering-based topic modeling*** technique focused on speed.
+A novel parallel clustering-based topic modeling technique is introduced, ensuring swift and efficient extraction of latent keywords from legal documents.
 
 **1. Parallel Clustering class**
  - dataframe : Dataframe based table
@@ -111,7 +111,7 @@ new_df['keywords'] = [', '.join(top_n_words[i]) for i in new_df['Topic'].values]
 
 #### STEP 3 : Embedding Modelization, Scoring, and Indexing
 
-We find that both the embedding modelization (name it ***split-merge***) and scoring method (***multi-interactions mechanisms***) help improve semantic search accuracy by 14 – 20%. It demonstrates that they are suitable approach in neural information retrieval.
+The research highlights the significance of the ***split-merge embedding modelization technique*** and the ***multi-interactions scoring mechanism***, showcasing a substantial improvement of 14-20% in semantic search accuracy. The SLS class facilitates these processes for both English and Korean legal datasets.
 
 **SLS class**
  - dataframe : Dataframe based table
@@ -148,7 +148,7 @@ all_index = sls.all_distance_metric()
 
 #### STEP 4 : Semantic Search
 
-Now just enter your query and start searching for documents !
+Users can seamlessly initiate semantic searches by inputting queries, leveraging the comprehensive SLS framework to retrieve relevant legal documents.
 
 **semantic search function**
  - user_query : Your input query (str)
@@ -172,6 +172,6 @@ outputs, _ = sls.semantic_search(
  - Currently, our paper is under review. It will be revealed in the future.
  
  
-### 5. Dev
+### 5. Development Team
 - Seoul National University NLP Labs
 - Navy Lee
