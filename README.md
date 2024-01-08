@@ -17,10 +17,12 @@ The ***SLS*** is presented as a groundbreaking conceptual search model based on 
 **BERT(Bidirectional Encoder Representations from Transformers)** and **GPT(Generative Pre-trained Transformer)** are both NLP models capable of understanding the semantic meaning of the text and have been applied to a variety of tasks including text classification, entity recognition, and more. 
 
 ***KRLawBERT***, developed through benchmarking Masked Language Modeling (MLM) and Transformer-based Sequential Denoising Auto-Encoder (TSDAE), outperforms conventional BERT-based models in capturing sentence text similarity for legal information retrieval. 
- ☞ https://github.com/Navy10021/KRLawBERT
+
+☞ https://github.com/Navy10021/KRLawBERT
 
 Additionally, ***KRLawGPT***, a decoder-only transformer, is introduced for generating expressive Korean legal text, broadening the language model capabilities.
- ☞ https://github.com/Navy10021/KRLawGPT
+
+☞ https://github.com/Navy10021/KRLawGPT
 
  ### 2. Model Overall Pipeline(SLS Process)
  
