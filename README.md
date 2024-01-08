@@ -175,5 +175,5 @@ outputs, _ = sls.semantic_search(
  
  
 ### 5. Development Team
-- Seoul National University NLP Labs
-- Navy Lee
+ - Seoul National University NLP Labs
+ - Under the guidance of Navy Lee
