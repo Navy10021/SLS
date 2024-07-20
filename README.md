@@ -171,9 +171,9 @@ outputs, _ = sls.semantic_search(
 ```
 
 ### 4. About Research Paper
- - Currently, our paper is under review. It will be revealed in the future.
+ - A Novel Method for Legal Information Retrieval: Developing a Neural Network-based Semantic Search Model Using KRLawBERT/GPT
  
  
 ### 5. Development Team
- - Seoul National University NLP Labs
+ - Seoul National University Graduate School of Data Science(SNU GSDS) NLP Labs
  - Under the guidance of Navy Lee
