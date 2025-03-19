@@ -10,8 +10,9 @@
 
 ### 1.1 Semantic Legal Searcher(SLS)
 The ***SLS*** is presented as a groundbreaking conceptual search model based on neural information retrieval, aiming to revolutionize legal information accessibility. Unlike common methods in Figure 1 (a), we extend our search model by introducing two information retrieval techniques shown in (b). The ***SLS*** employs an optimized neural Information Retrieval (IR) approach for legal datasets, incorporating the ***split-merge technique*** to maximize information retention in document embeddings. The ***multi-interactions technique*** enhances semantic similarity measures, establishing ***SLS*** as a comprehensive search framework that combines semantic search and topic modeling for relevance identification and keyword extraction.
- 
-![F_1](https://user-images.githubusercontent.com/105137667/206842983-1a5438d0-cd1c-4d77-991b-e63cacba4e66.jpg)
+
+ ![approach](https://github.com/user-attachments/assets/6c482864-d452-4d60-9f8a-459a7b96cb9d)
+
 
 ### 1.2. KRLawBERT and KRLawGPT
 **BERT(Bidirectional Encoder Representations from Transformers)** and **GPT(Generative Pre-trained Transformer)** are both NLP models capable of understanding the semantic meaning of the text and have been applied to a variety of tasks including text classification, entity recognition, and more. 
@@ -28,7 +29,7 @@ Additionally, ***KRLawGPT***, a decoder-only transformer, is introduced for gene
  
  The process of the ***SLS*** is divided into four steps as shown in Figure 2 : document encoding and split-merge modelization, parallel clustering-based topic modeling for keyword extraction, multi-interactions for relevance estimation, and the provision of user search results based on relevance scores. Each step is intricately designed to optimize the efficiency and effectiveness of legal information retrieval.
 
-<p align="center"><img src="https://user-images.githubusercontent.com/105137667/206843022-300ada12-e43e-4af9-b3a1-cd4d08b45cb2.jpg" width="500" height="600"/></p>
+![sls](https://github.com/user-attachments/assets/a25d4f23-bb17-47f7-86da-9b6f65ffacc4)
 
 ### 3. Model Usage
 
