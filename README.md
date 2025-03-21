@@ -58,7 +58,7 @@ my_plms = './output/tsdae-krlawbert'
 
 #### STEP 2 : Keywords Extraction with Parallel Clustering-based Topic Modeling
 
-☞ https://github.com/Navy10021/Paralle_Clustering_based_TM
+☞ https://github.com/Navy10021/Parallel_Clustering_based_TM
 
 A novel parallel clustering-based topic modeling technique is introduced, ensuring swift and efficient extraction of latent keywords from legal documents.
 
